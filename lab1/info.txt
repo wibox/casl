@@ -1,1 +1,3 @@
-Queueing system, to be further generalized in next lab sessions
+Queueing system, to be further generalized in next lab sessions.
+First objective: single server queue system.
+Second objective: generalize to multiple servers.
