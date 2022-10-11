@@ -14,10 +14,10 @@ customers_in_queue = 0
 total_customers_served = 0
 
 def generate_arrival_time(current_time):
-    return round(current_time + random.exponential(1/LAMBDA))
+    return current_time + random.exponential(1/LAMBDA)
 
 def generate_service_time(current_time):
-    return round(current_time + random.exponential(1/MU))
+    return current_time + random.exponential(1/MU)
 
 class customer():
     def __init__(self, arrival_time):
