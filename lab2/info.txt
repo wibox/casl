@@ -1,0 +1,62 @@
+3D-Online game simulator.
+Requirements:
+Simulate a game sessions in which the players move randomly in a square arena and
+whenever they encounter in proximity, only one survives, at random.
+The game ends when one single player survives.
+
+Evaluate
+
+the time to win
+the number of killed opponents for the winner
+the average number of killed opponents for all the players
+in function of the size of area, the mobility speed and the number of initial players.
+
+
+STUFF TO SAY IN P2P:
+1) INITIAL ASSUMPTIONS:
+    Let's say this is a game where dots, organized in two teams of 5 components, kill dots in the opponent team if they
+    are inside their area of sight (which, in this case, is defined as the fact that two players happen to be in the
+    same position). In this initial phase, each dot has the same speed with no ability
+    to modify it and they move randomly by one single unit (square) in a random direction for each unit of time. Modifying 
+    the speed means that each dot moves one dot more frequently than once a second, but the distance per unit of time
+    always remains one.
+    If a player happens to be in the area of sight of another player, then they battle each other, and the winner is the one who survives (this
+    process is carried out with a ranadom number generator since no other statistics regarding each player is encoded
+    in the player itself). There is no 1 vs N scenario, each battle is carried out one vs one each time, progressively 
+    (in case more than one player will be in the area of sight of the other).
+
+2) INPUT PARAMETERS:
+    - DIMENSIONS OF THE GRID (meters x meters)
+    - SPEED (according to what described above: meters/second which translates to less time for next move)
+    - NUMBER OF PLAYERS PER TEAM
+    - POSITIONS OF POSSIBLE OBSTACLES (coordinates)
+
+3) OUTPUT METRICS:
+    - TIME THE GAME TOOK TO FINISH (seconds)
+    - NUMBER OF KILLED OPPONENTS BY EACH PLAYER -> AVERAGE NUMBER OF KILLS PER PLAYER
+    - NUMBER OF KILLS FOR THE WINNER PLAYER
+
+4) MAIN DATA STRUCTES:
+    - INITIAL POSITION FOR THE TWO TEAMS -> LIST
+    - POSITION OF ALL THE PLAYERS AT EACH TIME -> LIST
+    - OBSTACLES POSITIONS -> LIST
+
+5) PSEUDOCODE
+    draw the grid
+    draw player and obstacles
+    while number_of_players > 1:
+        move_players()
+        check_for_fights_and_resolve()
+        update_players() #either by number and current position
+        update_statistics()
+        update_time()
+    end while
+    log_metrics()
+    close_game()
+
+6) FUTURE POSSIBLE APPLICATION
+    - SIMULATION OF MORE COMPLEX GAMES WITH MORE DYNAMIC MECHANICS FOR PVP/MAP EXPLORATION/POWER-UP TO COLLECT
+    - GAMES WITH MORE THAN 5 PEOPLE PER TEAM / MORE THAN TWO TEAMS
+    - GAMES WITH NON-SQUARE MAPS
+    - SIMULATION OF PANDEMIC SYSTEMS
+    - SIMULATION OF PREDATOR/PREY SYSTEMS EVOLUTION
