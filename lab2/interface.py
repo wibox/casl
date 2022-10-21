@@ -33,7 +33,9 @@ class Interface():
         self.SPAWN_POSITIONS_TEAM_2 = [(i*self.SPAWN_OFFSET, self.WINDOW_HEIGHT-self.BLOCKSIZE) for i in range(self.NUM_PLAYERS_PER_TEAM)]
 
         self.TEAM1 = [Player(tag=f"p{i}_t1", spawnPosition=self.SPAWN_POSITIONS_TEAM_1[i]) for i in range(self.NUM_PLAYERS_PER_TEAM)]
+        self.TEAM1_REMAINING = len(self.TEAM1)
         self.TEAM2 = [Player(tag=f"p{i}_t2", spawnPosition=self.SPAWN_POSITIONS_TEAM_2[i]) for i in range(self.NUM_PLAYERS_PER_TEAM)]
+        self.TEAM2_REMAINING = len(self.TEAM2)
 
         self.NUM_OBSTACLES = NUM_OBSTACLES
         self.OBSTACLES_POSITIONS = [(260, 260), (200, 180), (140, 240), (100, 160), (170, 340)]
@@ -52,13 +54,33 @@ class Interface():
 
     def spawnMovedPlayers(self):
         for player in self.TEAM1:
-            pg.draw.rect(self.SCREEN, (200, 200, 200), pg.Rect(player.position[0], player.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+            if player.isAlive:
+                pg.draw.rect(self.SCREEN, (200, 200, 200), pg.Rect(player.position[0], player.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
         for player in self.TEAM2:
-            pg.draw.rect(self.SCREEN, (200, 200, 200), pg.Rect(player.position[0], player.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+            if player.isAlive:
+                pg.draw.rect(self.SCREEN, (200, 200, 200), pg.Rect(player.position[0], player.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+
+    def get_new_player_position(self, position):
+        #ritorna sempre una nuova posizione all'interno dei confini della mappa
+        search = True
+        while search:
+            random_direction = np.random.randint(low=1, high=4)
+            if random_direction == 1 and position[1]+self.BLOCKSIZE<self.WINDOW_HEIGHT:
+                position = (position[0], position[1]+self.BLOCKSIZE)
+        return position
+
+    def spawnDeadPlayers(self):
+        for player in self.TEAM1:
+            if not player.isAlive:
+                pg.draw.rect(self.SCREEN, (0, 255, 0), pg.Rect(player.position[0], player.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+        for player in self.TEAM2:
+            if not player.isAlive:
+                pg.draw.rect(self.SCREEN, (255, 0, 0), pg.Rect(player.position[0], player.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+                
 
     def spawnObstacles(self):
         for coordinates in self.OBSTACLES_POSITIONS:
-            pg.draw.rect(self.SCREEN, (255, 0, 0), pg.Rect(coordinates[0], coordinates[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+            pg.draw.rect(self.SCREEN, (255, 0, 255), pg.Rect(coordinates[0], coordinates[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
 
     def interfaceSetup(self):
         self.designInterface()
@@ -70,17 +92,53 @@ class Interface():
         self.designInterface()
 
     def movePlayers(self):
+        looking_for_new_position = True
         for player in self.TEAM1:
-            pass
+            if player.isAlive:
+                #continuo a cercare una nuova posizione finchè non ne trovo una adeguta
+                while looking_for_new_position:
+                    new_position = self.get_new_player_position(player.position)
+                    if(new_position not in self.OBSTACLES_POSITIONS):
+                        player.position = new_position
+                        looking_for_new_position = False
+
+        looking_for_new_position = True
         for player in self.TEAM2:
-            pass
+            if player.isAlive:
+                #continuo a cercare una nuova posizione finchè non ne trovo una adeguta
+                while looking_for_new_position:
+                    new_position = self.get_new_player_position(player.position)
+                    if(new_position not in self.OBSTACLES_POSITIONS):
+                        player.position = new_position
+                        looking_for_new_position = False
 
     def resolveBattles(self):
-        pass
+        for player1 in self.TEAM1:
+            for player2 in self.TEAM2:
+                if player1.position == player2.position:
+                    # scelgo un numero a caso tra 0 ed 1
+                    # se questo è maggiore di .5 allora vince player del team1
+                    # altrimenti vince player del team2                    
+                        win_flag = np.random.random()
+
+                        if win_flag > 0.5:
+                            player1.addKill()
+                            player2.isAlive=False
+                            self.TEAM2_REMAINING -= 1
+                            pg.draw.rect(self.SCREEN, (255, 0, 0), pg.Rect(player2.position[0], player2.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+                        else:
+                            player2.addKill()
+                            player1.isAlive=False
+                            self.TEAM1_REMAINING -= 1
+                            pg.draw.rect(self.SCREEN, (0, 255, 0), pg.Rect(player1.position[0], player1.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
+
+                        self.NUM_PLAYERS_ALIVE -= 1
+
 
     def drawNewInterface(self):
         self.designInterface()
         self.spawnMovedPlayers()
+        self.spawnDeadPlayers()
         self.spawnObstacles()
 
 
