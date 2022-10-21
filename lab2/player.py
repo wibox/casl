@@ -21,8 +21,8 @@ class Player():
         self.isAlive=True
         self.isWinner=False
 
-    def move(self):
-        pass
+    def move(self, position):
+        self.position=position
 
     def addKill(self):
         pass

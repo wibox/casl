@@ -1,5 +1,6 @@
 import time
 import sys
+from typing import Tuple
 
 import pygame as pg
 import numpy as np
@@ -62,12 +63,12 @@ class Interface():
 
     def get_new_player_position(self, position):
         #ritorna sempre una nuova posizione all'interno dei confini della mappa
-        search = True
-        while search:
-            random_direction = np.random.randint(low=1, high=4)
-            if random_direction == 1 and position[1]+self.BLOCKSIZE<self.WINDOW_HEIGHT:
-                position = (position[0], position[1]+self.BLOCKSIZE)
-        return position
+        # search = True
+        # while search:
+        #     random_direction = np.random.randint(low=1, high=4)
+        #     if random_direction == 1 and position[1]+self.BLOCKSIZE<self.WINDOW_HEIGHT:
+        #         position = (position[0], position[1]+self.BLOCKSIZE)
+        return (0,0)
 
     def spawnDeadPlayers(self):
         for player in self.TEAM1:
@@ -77,7 +78,6 @@ class Interface():
             if not player.isAlive:
                 pg.draw.rect(self.SCREEN, (255, 0, 0), pg.Rect(player.position[0], player.position[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
                 
-
     def spawnObstacles(self):
         for coordinates in self.OBSTACLES_POSITIONS:
             pg.draw.rect(self.SCREEN, (255, 0, 255), pg.Rect(coordinates[0], coordinates[1], self.BLOCKSIZE, self.BLOCKSIZE), 0)
@@ -99,7 +99,7 @@ class Interface():
                 while looking_for_new_position:
                     new_position = self.get_new_player_position(player.position)
                     if(new_position not in self.OBSTACLES_POSITIONS):
-                        player.position = new_position
+                        player.move(new_position)
                         looking_for_new_position = False
 
         looking_for_new_position = True
@@ -109,7 +109,7 @@ class Interface():
                 while looking_for_new_position:
                     new_position = self.get_new_player_position(player.position)
                     if(new_position not in self.OBSTACLES_POSITIONS):
-                        player.position = new_position
+                        player.move(new_position)
                         looking_for_new_position = False
 
     def resolveBattles(self):
@@ -134,13 +134,11 @@ class Interface():
 
                         self.NUM_PLAYERS_ALIVE -= 1
 
-
     def drawNewInterface(self):
         self.designInterface()
         self.spawnMovedPlayers()
         self.spawnDeadPlayers()
         self.spawnObstacles()
-
 
     def startGame(self):
         pg.init()
