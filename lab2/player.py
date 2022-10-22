@@ -1,17 +1,4 @@
 class Player():
-    """
-    class_attributes:
-        -tag
-        -spawn position: Tuple(int, int)
-        -position: Tuple(int, int)
-        -number of killed opponents: int
-        -winner: bool
-    class_methods:
-        -move()
-        -addKill()
-        -die()
-        -__str__()
-    """
     def __init__(self, tag, spawnPosition):
 
         self.tag=tag

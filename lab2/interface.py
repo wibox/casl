@@ -11,15 +11,17 @@ from warhol import Warhol
 class Interface():
     def __init__(self,
                 WINDOW_HEIGHT=200,
-                WINDOWS_WIDTH=200,
+                WINDOW_WIDTH=200,
                 BLOCKSIZE=20,
                 NUM_PLAYERS_PER_TEAM=2,
+                MOVEMENT_SPEED=1,
+                GAME_SPEED=.01,
                 NUM_OBSTACLES=5,
                 OBSTACLES=False):
 
         self.BLOCKSIZE=BLOCKSIZE
         self.WINDOW_HEIGHT=WINDOW_HEIGHT+self.BLOCKSIZE
-        self.WINDOW_WIDTH=WINDOWS_WIDTH+self.BLOCKSIZE
+        self.WINDOW_WIDTH=WINDOW_WIDTH+self.BLOCKSIZE
 
         self.NORMALIZED_WINDOW_HEIGHT=self.WINDOW_HEIGHT-self.BLOCKSIZE
         self.NORMALIZED_WINDOW_WIDTH=self.WINDOW_WIDTH-self.BLOCKSIZE
@@ -33,7 +35,9 @@ class Interface():
         pg.display.set_caption("Panico Game")
         icon=pg.image.load("logo.jpg")
         pg.display.set_icon(icon)
+        self.GAME_SPEED=GAME_SPEED
 
+        self.MOVEMENT_SPEED = MOVEMENT_SPEED
         self.SPAWN_OFFSET = self.NORMALIZED_WINDOW_WIDTH/self.NUM_PLAYERS_PER_TEAM
         # adjust_offset = False
         # if self.SPAWN_OFFSET % self.BLOCKSIZE != 0:
@@ -94,21 +98,21 @@ class Interface():
             # 2 -> Est
             # 3 -> Sud
             # 4 -> Ovest
-            if random_direction == 1 and position[1]+self.BLOCKSIZE<self.NORMALIZED_WINDOW_HEIGHT and position[1]+self.BLOCKSIZE >= 0:
+            if random_direction == 1 and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
                 search = False
-                return (position[0], position[1]+self.BLOCKSIZE)
+                return (position[0], position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE))
 
-            if random_direction == 2 and position[0]+self.BLOCKSIZE<self.NORMALIZED_WINDOW_WIDTH and position[0]+self.BLOCKSIZE>=0:
+            if random_direction == 2 and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)>=0:
                 search = False
-                return (position[0]+self.BLOCKSIZE, position[1])
+                return (position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
             
-            if random_direction == 3 and position[1]-self.BLOCKSIZE<self.NORMALIZED_WINDOW_HEIGHT and position[1]-self.BLOCKSIZE>=0:
+            if random_direction == 3 and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)>=0:
                 search = False
-                return (position[0], position[1]-self.BLOCKSIZE)
+                return (position[0], position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE))
             
-            if random_direction == 4 and position[0]-self.BLOCKSIZE<self.NORMALIZED_WINDOW_WIDTH and position[0]-self.BLOCKSIZE>=0:
+            if random_direction == 4 and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)>=0:
                 search = False
-                return (position[0]-self.BLOCKSIZE, position[1])
+                return (position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
 
     def get_new_player_position_team2(self, position):
         # always returns a new position for team2 players within map's borders.
@@ -122,21 +126,21 @@ class Interface():
             # 2 -> Est
             # 3 -> Sud (Nord)
             # 4 -> Ovest
-            if random_direction == 1 and position[1]-self.BLOCKSIZE<self.NORMALIZED_WINDOW_HEIGHT and position[1]-self.BLOCKSIZE >= 0:
+            if random_direction == 1 and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
                 search = False
-                return (position[0], position[1]-self.BLOCKSIZE)
+                return (position[0], position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE))
 
-            if random_direction == 2 and position[0]+self.BLOCKSIZE<self.NORMALIZED_WINDOW_WIDTH and position[0]+self.BLOCKSIZE >= 0:
+            if random_direction == 2 and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
                 search = False
-                return (position[0]+self.BLOCKSIZE, position[1])
+                return (position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
             
-            if random_direction == 3 and position[1]+self.BLOCKSIZE<self.NORMALIZED_WINDOW_HEIGHT and position[1]+self.BLOCKSIZE >= 0:
+            if random_direction == 3 and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
                 search = False
-                return (position[0], position[1]+self.BLOCKSIZE)
+                return (position[0], position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE))
             
-            if random_direction == 4 and position[0]-self.BLOCKSIZE<self.NORMALIZED_WINDOW_WIDTH and position[0]-self.BLOCKSIZE >= 0:
+            if random_direction == 4 and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
                 search = False
-                return (position[0]-self.BLOCKSIZE, position[1])
+                return (position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
 
     def spawnDeadPlayers(self):
         for player in self.TEAM1:
@@ -248,7 +252,7 @@ class Interface():
                 if e.type==pg.QUIT:
                     pg.quit()
                     sys.exit()
-            # time.sleep(.1)
+            time.sleep(self.GAME_SPEED)
             pg.display.update()
 
     def debug(self):
