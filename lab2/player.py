@@ -25,10 +25,10 @@ class Player():
         self.position=position
 
     def addKill(self):
-        pass
+        self.numKills += 1
 
     def die(self):
-        pass
+        self.isAlive=False
 
     def __str__(self) -> str:
         return f"Return useful formatted string"
