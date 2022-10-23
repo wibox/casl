@@ -45,5 +45,6 @@ myConfigGetter = ConfigGetter(config_path=CONFIG_PATH, config_file=CONFIG_FILE)
 test_configurations = myConfigGetter.retrieve_configs()
 
 with open("execute.sh", "w") as f:
+    print(f"Writing {len(test_configurations)} configuratons to {myConfigGetter.path}/{myConfigGetter.config_file}")
     for configuration in test_configurations:
         f.write(f"python3 main.py --area {configuration['area']} --speed {configuration['speed']} --players {configuration['players']} \n")
