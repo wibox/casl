@@ -31,7 +31,7 @@ class ConfigGetter():
             return []
 
 PARAMETERS = {
-    'area' : [200, 400, 500, 600, 800],
+    'area' : [200, 400, 800],
     'speed': [1, 2, 3],
     'players':[2, 4, 5, 10]
 }

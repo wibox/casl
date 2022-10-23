@@ -10,6 +10,8 @@ from warhol import Warhol
 
 class Interface():
     def __init__(self,
+                logger=Logger(log_path="log"),
+                paths=[],
                 WINDOW_HEIGHT=200,
                 WINDOW_WIDTH=200,
                 BLOCKSIZE=20,
@@ -32,10 +34,12 @@ class Interface():
         #CONFIGURATION OF GAME SESSION
         self.SCREEN = pg.display.set_mode((self.WINDOW_WIDTH, self.WINDOW_HEIGHT))
         self.CLOCK = pg.time.Clock()
-        pg.display.set_caption("Panico Game")
+        pg.display.set_caption("PVP Simulator")
         icon=pg.image.load("logo.jpg")
         pg.display.set_icon(icon)
         self.GAME_SPEED=GAME_SPEED
+        self.LOGGER=logger
+        self.PATHS=paths
 
         self.MOVEMENT_SPEED = MOVEMENT_SPEED
         self.SPAWN_OFFSET = self.NORMALIZED_WINDOW_WIDTH/self.NUM_PLAYERS_PER_TEAM
@@ -54,6 +58,8 @@ class Interface():
         self.TEAM1_REMAINING = len(self.TEAM1)
         self.TEAM2 = [Player(tag=f"p{i}_t2", spawnPosition=self.SPAWN_POSITIONS_TEAM_2[i]) for i in range(self.NUM_PLAYERS_PER_TEAM)]
         self.TEAM2_REMAINING = len(self.TEAM2)
+
+        self.PLAYERS = self.TEAM1+self.TEAM2
 
         if OBSTACLES:
             self.NUM_OBSTACLES = NUM_OBSTACLES
@@ -215,8 +221,41 @@ class Interface():
 
                         self.NUM_PLAYERS_ALIVE -= 1
 
+    def log_info(self):
+        # 0: time vs area
+        # 1: time vs speed
+        # 2: time vs players
+        # 3: winnerkills vs area
+        # 4: winnerkills vs speed
+        # 5: winnerkills vs players
+        # 6: avgkills vs area
+        # 7: avgkills vs speed
+        # 8: avgkills vs players
+        # Writing header for time_log files and logging 0, 1, 2
+        self.LOGGER.write_header("TIME,AREA\n", filename=self.PATHS[0])
+        self.LOGGER.write_header("TIME,SPEED\n", filename=self.PATHS[1])
+        self.LOGGER.write_header("TIME,NUM_PLAYERS\n", filename=self.PATHS[2])
+        self.LOGGER.log_time(filename=self.PATHS[0], time=self.run_time, other=f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}")
+        self.LOGGER.log_time(filename=self.PATHS[1], time=self.run_time, other=self.MOVEMENT_SPEED)
+        self.LOGGER.log_time(filename=self.PATHS[2], time=self.run_time, other=self.NUM_PLAYERS_PER_TEAM)
+        # writing header for kills_log files and logging 3, 4, 5
+        self.LOGGER.write_header("WINNERKILLS,AREA\n", filename=self.PATHS[3])
+        self.LOGGER.write_header("WINNERKILLS,SPEED\n", filename=self.PATHS[4])
+        self.LOGGER.write_header("WINNERKILLS,NUM_PLAYERS\n", filename=self.PATHS[5])
+        self.LOGGER.log_winner_kills(filename=self.PATHS[3], kills=self.WINNER_TEAM_MAX_KILLS, other=f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}")
+        self.LOGGER.log_winner_kills(filename=self.PATHS[4], kills=self.WINNER_TEAM_MAX_KILLS, other=self.MOVEMENT_SPEED)
+        self.LOGGER.log_winner_kills(filename=self.PATHS[5], kills=self.WINNER_TEAM_MAX_KILLS, other=self.NUM_PLAYERS_PER_TEAM)
+        # writing header for avg_kills log files and logging 6, 7, 8
+        self.LOGGER.write_header("AVGKILLS,AREA\n", filename=self.PATHS[6])
+        self.LOGGER.write_header("AVGKILLS,SPEED\n", filename=self.PATHS[7])
+        self.LOGGER.write_header("AVGKILLS,NUM_PLAYERS\n", filename=self.PATHS[8])
+        self.LOGGER.log_average(filename=self.PATHS[6], avg=self.AVG_KILLS, other=f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}")
+        self.LOGGER.log_average(filename=self.PATHS[7], avg=self.AVG_KILLS, other=self.MOVEMENT_SPEED)
+        self.LOGGER.log_average(filename=self.PATHS[8], avg=self.AVG_KILLS, other=self.NUM_PLAYERS_PER_TEAM)
+
     def print_victory(self, team):
         print(f"{team} won!")
+        self.log_info()
         pg.quit()
         sys.exit()
 
@@ -228,6 +267,7 @@ class Interface():
 
     def startGame(self):
         pg.init()
+        start_time = time.time()
 
         self.SCREEN.fill((0, 0, 0))#filling the screen with black
         
@@ -243,9 +283,35 @@ class Interface():
 
             #check if a team won
             if self.TEAM1_REMAINING == 0:
+                # retrieving time
+                self.run_time = time.time() - start_time
+                # retrieving max kills for winner team
+                kills = 0
+                for player in self.TEAM2:
+                    if player.numKills > kills:
+                        kills = player.numKills
+                self.WINNER_TEAM_MAX_KILLS = kills
+                # retrieving avg kills for each player
+                total_kills = 0
+                for player in self.PLAYERS:
+                    total_kills += player.numKills
+                self.AVG_KILLS = total_kills / (self.NUM_PLAYERS_PER_TEAM*2)
                 self.print_victory("TEAM 2")
             
             if self.TEAM2_REMAINING == 0:
+                # retrieving time
+                self.run_time = time.time() - start_time
+                # retrieving max kills for winner team
+                kills = 0
+                for player in self.TEAM1:
+                    if player.numKills > kills:
+                        kills = player.numKills
+                self.WINNER_TEAM_MAX_KILLS = kills
+                # retrieving avg kills for each player
+                total_kills = 0
+                for player in self.PLAYERS:
+                    total_kills += player.numKills
+                self.AVG_KILLS = total_kills / (self.NUM_PLAYERS_PER_TEAM*2)
                 self.print_victory("TEAM 1")
 
             for e in pg.event.get():

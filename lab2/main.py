@@ -15,12 +15,14 @@ def parse_args():
 
 args = parse_args()
 
-myLogger = Logger()
+myLogger = Logger(log_path="log")
 myWarhol = Warhol()
 
 if __name__ == "__main__":
     print(f"Testing: \n area = {args.area**2} \n speed = {args.speed} \n players = {args.players}")
     myGame = Interface(
+        logger=myLogger,
+        paths=myLogger.log_files,
         WINDOW_HEIGHT=args.area,
         WINDOW_WIDTH=args.area,
         NUM_PLAYERS_PER_TEAM=args.players,
