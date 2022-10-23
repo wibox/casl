@@ -12,26 +12,6 @@
         },
         {
             "area": 200,
-            "players": 2,
-            "speed": 3
-        },
-        {
-            "area": 200,
-            "players": 4,
-            "speed": 1
-        },
-        {
-            "area": 200,
-            "players": 4,
-            "speed": 2
-        },
-        {
-            "area": 200,
-            "players": 4,
-            "speed": 3
-        },
-        {
-            "area": 200,
             "players": 5,
             "speed": 1
         },
@@ -42,11 +22,6 @@
         },
         {
             "area": 200,
-            "players": 5,
-            "speed": 3
-        },
-        {
-            "area": 200,
             "players": 10,
             "speed": 1
         },
@@ -54,11 +29,6 @@
             "area": 200,
             "players": 10,
             "speed": 2
-        },
-        {
-            "area": 200,
-            "players": 10,
-            "speed": 3
         },
         {
             "area": 400,
@@ -72,26 +42,6 @@
         },
         {
             "area": 400,
-            "players": 2,
-            "speed": 3
-        },
-        {
-            "area": 400,
-            "players": 4,
-            "speed": 1
-        },
-        {
-            "area": 400,
-            "players": 4,
-            "speed": 2
-        },
-        {
-            "area": 400,
-            "players": 4,
-            "speed": 3
-        },
-        {
-            "area": 400,
             "players": 5,
             "speed": 1
         },
@@ -102,11 +52,6 @@
         },
         {
             "area": 400,
-            "players": 5,
-            "speed": 3
-        },
-        {
-            "area": 400,
             "players": 10,
             "speed": 1
         },
@@ -114,11 +59,6 @@
             "area": 400,
             "players": 10,
             "speed": 2
-        },
-        {
-            "area": 400,
-            "players": 10,
-            "speed": 3
         },
         {
             "area": 800,
@@ -132,26 +72,6 @@
         },
         {
             "area": 800,
-            "players": 2,
-            "speed": 3
-        },
-        {
-            "area": 800,
-            "players": 4,
-            "speed": 1
-        },
-        {
-            "area": 800,
-            "players": 4,
-            "speed": 2
-        },
-        {
-            "area": 800,
-            "players": 4,
-            "speed": 3
-        },
-        {
-            "area": 800,
             "players": 5,
             "speed": 1
         },
@@ -162,11 +82,6 @@
         },
         {
             "area": 800,
-            "players": 5,
-            "speed": 3
-        },
-        {
-            "area": 800,
             "players": 10,
             "speed": 1
         },
@@ -174,11 +89,6 @@
             "area": 800,
             "players": 10,
             "speed": 2
-        },
-        {
-            "area": 800,
-            "players": 10,
-            "speed": 3
         }
     ]
 }

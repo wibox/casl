@@ -1,5 +1,18 @@
 import json
 from sklearn.model_selection import ParameterGrid
+from logger import Logger
+
+myLogger = Logger(log_path="log")
+
+myLogger.write_header("TIME,SPEED\n", filename=myLogger.log_files[1])
+myLogger.write_header("TIME,AREA\n", filename=myLogger.log_files[0])
+myLogger.write_header("TIME,NUM_PLAYERS\n", filename=myLogger.log_files[2])
+myLogger.write_header("WINNERKILLS,AREA\n", filename=myLogger.log_files[3])
+myLogger.write_header("WINNERKILLS,SPEED\n", filename=myLogger.log_files[4])
+myLogger.write_header("WINNERKILLS,NUM_PLAYERS\n", filename=myLogger.log_files[5])
+myLogger.write_header("AVGKILLS,AREA\n", filename=myLogger.log_files[6])
+myLogger.write_header("AVGKILLS,SPEED\n", filename=myLogger.log_files[7])
+myLogger.write_header("AVGKILLS,NUM_PLAYERS\n", filename=myLogger.log_files[8])
 
 class ConfigSetter():
     def __init__(self, config_path, config_file):
@@ -32,8 +45,8 @@ class ConfigGetter():
 
 PARAMETERS = {
     'area' : [200, 400, 800],
-    'speed': [1, 2, 3],
-    'players':[2, 4, 5, 10]
+    'speed': [1, 2],
+    'players':[2, 5, 10]
 }
 
 CONFIG_PATH = "log"

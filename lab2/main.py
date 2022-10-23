@@ -27,6 +27,6 @@ if __name__ == "__main__":
         WINDOW_WIDTH=args.area,
         NUM_PLAYERS_PER_TEAM=args.players,
         MOVEMENT_SPEED=args.speed,
-        GAME_SPEED=.001
+        GAME_SPEED=.01
     )
     myGame.startGame()

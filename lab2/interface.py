@@ -42,6 +42,7 @@ class Interface():
         self.PATHS=paths
 
         self.MOVEMENT_SPEED = MOVEMENT_SPEED
+        self.SPACE_UNIT = self.BLOCKSIZE*self.MOVEMENT_SPEED
         self.SPAWN_OFFSET = self.NORMALIZED_WINDOW_WIDTH/self.NUM_PLAYERS_PER_TEAM
         # adjust_offset = False
         # if self.SPAWN_OFFSET % self.BLOCKSIZE != 0:
@@ -104,21 +105,21 @@ class Interface():
             # 2 -> Est
             # 3 -> Sud
             # 4 -> Ovest
-            if random_direction == 1 and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
+            if random_direction == 1 and position[1]+self.SPACE_UNIT<self.NORMALIZED_WINDOW_HEIGHT and position[1]+self.SPACE_UNIT >= 0:
                 search = False
-                return (position[0], position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE))
+                return (position[0], position[1]+self.SPACE_UNIT)
 
-            if random_direction == 2 and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)>=0:
+            if random_direction == 2 and position[0]+self.SPACE_UNIT<self.NORMALIZED_WINDOW_WIDTH and position[0]+self.SPACE_UNIT>=0:
                 search = False
-                return (position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
+                return (position[0]+self.SPACE_UNIT, position[1])
             
-            if random_direction == 3 and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)>=0:
+            if random_direction == 3 and position[1]-self.SPACE_UNIT<self.NORMALIZED_WINDOW_HEIGHT and position[1]-self.SPACE_UNIT>=0:
                 search = False
-                return (position[0], position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE))
+                return (position[0], position[1]-self.SPACE_UNIT)
             
-            if random_direction == 4 and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)>=0:
+            if random_direction == 4 and position[0]-self.SPACE_UNIT<self.NORMALIZED_WINDOW_WIDTH and position[0]-self.SPACE_UNIT>=0:
                 search = False
-                return (position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
+                return (position[0]-self.SPACE_UNIT, position[1])
 
     def get_new_player_position_team2(self, position):
         # always returns a new position for team2 players within map's borders.
@@ -132,21 +133,21 @@ class Interface():
             # 2 -> Est
             # 3 -> Sud (Nord)
             # 4 -> Ovest
-            if random_direction == 1 and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
+            if random_direction == 1 and position[1]-self.SPACE_UNIT<self.NORMALIZED_WINDOW_HEIGHT and position[1]-self.SPACE_UNIT >= 0:
                 search = False
-                return (position[0], position[1]-(self.MOVEMENT_SPEED*self.BLOCKSIZE))
+                return (position[0], position[1]-self.SPACE_UNIT)
 
-            if random_direction == 2 and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
+            if random_direction == 2 and position[0]+self.SPACE_UNIT<self.NORMALIZED_WINDOW_WIDTH and position[0]+self.SPACE_UNIT >= 0:
                 search = False
-                return (position[0]+(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
+                return (position[0]+self.SPACE_UNIT, position[1])
             
-            if random_direction == 3 and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_HEIGHT and position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
+            if random_direction == 3 and position[1]+self.SPACE_UNIT<self.NORMALIZED_WINDOW_HEIGHT and position[1]+self.SPACE_UNIT >= 0:
                 search = False
-                return (position[0], position[1]+(self.MOVEMENT_SPEED*self.BLOCKSIZE))
+                return (position[0], position[1]+self.SPACE_UNIT)
             
-            if random_direction == 4 and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE)<self.NORMALIZED_WINDOW_WIDTH and position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE) >= 0:
+            if random_direction == 4 and position[0]-self.SPACE_UNIT<self.NORMALIZED_WINDOW_WIDTH and position[0]-self.SPACE_UNIT >= 0:
                 search = False
-                return (position[0]-(self.MOVEMENT_SPEED*self.BLOCKSIZE), position[1])
+                return (position[0]-self.SPACE_UNIT, position[1])
 
     def spawnDeadPlayers(self):
         for player in self.TEAM1:
@@ -196,7 +197,8 @@ class Interface():
     def resolveBattles(self):
         for player1 in self.TEAM1:
             for player2 in self.TEAM2:
-                if player1.position == player2.position and player1.isAlive and player2.isAlive:
+                # if player1.position == player2.position and player1.isAlive and player2.isAlive:
+                if player1.isAlive and player2.isAlive and player1.position==player2.position:#(player1.position[0]==player2.position[0]-self.SPACE_UNIT or player1.position[0]==player2.position[0]+self.SPACE_UNIT or player1.position[1]==player2.position[1]-self.SPACE_UNIT or player1.position[1]==player2.position[1]+self.SPACE_UNIT):
                     # scelgo un numero a caso tra 0 ed 1
                     # se questo è maggiore di .5 allora vince player del team1
                     # altrimenti vince player del team2                    
@@ -232,23 +234,23 @@ class Interface():
         # 7: avgkills vs speed
         # 8: avgkills vs players
         # Writing header for time_log files and logging 0, 1, 2
-        self.LOGGER.write_header("TIME,AREA\n", filename=self.PATHS[0])
-        self.LOGGER.write_header("TIME,SPEED\n", filename=self.PATHS[1])
-        self.LOGGER.write_header("TIME,NUM_PLAYERS\n", filename=self.PATHS[2])
+        # self.LOGGER.write_header("TIME,AREA\n", filename=self.PATHS[0])
+        # self.LOGGER.write_header("TIME,SPEED\n", filename=self.PATHS[1])
+        # self.LOGGER.write_header("TIME,NUM_PLAYERS\n", filename=self.PATHS[2])
         self.LOGGER.log_time(filename=self.PATHS[0], time=self.run_time, other=f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}")
         self.LOGGER.log_time(filename=self.PATHS[1], time=self.run_time, other=self.MOVEMENT_SPEED)
         self.LOGGER.log_time(filename=self.PATHS[2], time=self.run_time, other=self.NUM_PLAYERS_PER_TEAM)
         # writing header for kills_log files and logging 3, 4, 5
-        self.LOGGER.write_header("WINNERKILLS,AREA\n", filename=self.PATHS[3])
-        self.LOGGER.write_header("WINNERKILLS,SPEED\n", filename=self.PATHS[4])
-        self.LOGGER.write_header("WINNERKILLS,NUM_PLAYERS\n", filename=self.PATHS[5])
+        # self.LOGGER.write_header("WINNERKILLS,AREA\n", filename=self.PATHS[3])
+        # self.LOGGER.write_header("WINNERKILLS,SPEED\n", filename=self.PATHS[4])
+        # self.LOGGER.write_header("WINNERKILLS,NUM_PLAYERS\n", filename=self.PATHS[5])
         self.LOGGER.log_winner_kills(filename=self.PATHS[3], kills=self.WINNER_TEAM_MAX_KILLS, other=f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}")
         self.LOGGER.log_winner_kills(filename=self.PATHS[4], kills=self.WINNER_TEAM_MAX_KILLS, other=self.MOVEMENT_SPEED)
         self.LOGGER.log_winner_kills(filename=self.PATHS[5], kills=self.WINNER_TEAM_MAX_KILLS, other=self.NUM_PLAYERS_PER_TEAM)
         # writing header for avg_kills log files and logging 6, 7, 8
-        self.LOGGER.write_header("AVGKILLS,AREA\n", filename=self.PATHS[6])
-        self.LOGGER.write_header("AVGKILLS,SPEED\n", filename=self.PATHS[7])
-        self.LOGGER.write_header("AVGKILLS,NUM_PLAYERS\n", filename=self.PATHS[8])
+        # self.LOGGER.write_header("AVGKILLS,AREA\n", filename=self.PATHS[6])
+        # self.LOGGER.write_header("AVGKILLS,SPEED\n", filename=self.PATHS[7])
+        # self.LOGGER.write_header("AVGKILLS,NUM_PLAYERS\n", filename=self.PATHS[8])
         self.LOGGER.log_average(filename=self.PATHS[6], avg=self.AVG_KILLS, other=f"{self.WINDOW_WIDTH}x{self.WINDOW_HEIGHT}")
         self.LOGGER.log_average(filename=self.PATHS[7], avg=self.AVG_KILLS, other=self.MOVEMENT_SPEED)
         self.LOGGER.log_average(filename=self.PATHS[8], avg=self.AVG_KILLS, other=self.NUM_PLAYERS_PER_TEAM)
