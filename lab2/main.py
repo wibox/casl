@@ -1,6 +1,5 @@
 from interface import Interface
 from logger import Logger
-from warhol import Warhol
 
 import argparse
 

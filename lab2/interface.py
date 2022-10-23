@@ -6,7 +6,6 @@ import numpy as np
 
 from player import Player
 from logger import Logger
-from warhol import Warhol
 
 class Interface():
     def __init__(self,

@@ -45,7 +45,7 @@ class ConfigGetter():
 
 PARAMETERS = {
     'area' : [200, 400, 800],
-    'speed': [1, 2],
+    'speed': [1],
     'players':[2, 5, 10],
     'seed':[777]
 }

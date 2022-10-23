@@ -4,6 +4,7 @@ class Logger():
         self.log_files=["time_vs_area.txt", "time_vs_speed.txt", "time_vs_players.txt",
                         "winnerkills_vs_area.txt", "winner_kills_vs_speed.txt", "winnerkills_vs_players.txt",
                         "avgkills_vs_area.txt", "avg_kills_vs_speed.txt", "avgkills_vs_players.txt"]
+        self.no_ext_log_files = [filename.split(".")[0] for filename in self.log_files]
         # self.write_header("TIME,AREA\n", filename=self.log_files[0])
         # self.write_header("TIME,SPEED\n", filename=self.log_files[1])
         # self.write_header("TIME,NUM_PLAYERS\n", filename=self.log_files[2])

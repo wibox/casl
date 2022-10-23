@@ -21,9 +21,9 @@ myWarhol = Warhol()
 for log_file in myLogger.log_files:
     data = pd.read_csv(f"{myLogger.log_path}/{log_file}")
     myWarhol.make_visualization(
-                                filename=log_file,
-                                x=data.iloc[:, 0],
-                                y=data.iloc[:, 1],
-                                xlabel=data.columns[0],
-                                ylabel=data.columns[1])
+                                filename=log_file.split(".")[0],
+                                x=data.iloc[:, 1],
+                                y=data.iloc[:, 0],
+                                xlabel=data.columns[1],
+                                ylabel=data.columns[0])
 
