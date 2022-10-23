@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "area": 200,
+            "players": 2,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 200,
+            "players": 5,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 200,
+            "players": 10,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 400,
+            "players": 2,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 400,
+            "players": 5,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 400,
+            "players": 10,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 800,
+            "players": 2,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 800,
+            "players": 5,
+            "seed": 777,
+            "speed": 1
+        },
+        {
+            "area": 800,
+            "players": 10,
+            "seed": 777,
+            "speed": 1
+        }
+    ]
+}
