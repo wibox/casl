@@ -1,5 +1,5 @@
 class Logger():
-    def __init__(self, log_path):
+    def __init__(self, log_path="log"):
         self.log_path=log_path
         self.log_files=["time_vs_area.txt", "time_vs_speed.txt", "time_vs_players.txt",
                         "winnerkills_vs_area.txt", "winner_kills_vs_speed.txt", "winnerkills_vs_players.txt",

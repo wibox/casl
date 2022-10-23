@@ -10,13 +10,13 @@ def parse_args():
     parser.add_argument('--area', type=int, default=200)
     parser.add_argument('--speed', type=int, default=1)
     parser.add_argument('--players', type=int, default=2)
+    parser.add_argument('--seed', type=int, default=299266)
 
     return parser.parse_args()
 
 args = parse_args()
 
 myLogger = Logger(log_path="log")
-myWarhol = Warhol()
 
 if __name__ == "__main__":
     print(f"Testing: \n area = {args.area**2} \n speed = {args.speed} \n players = {args.players}")

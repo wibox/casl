@@ -55,9 +55,9 @@ class Interface():
         self.SPAWN_POSITIONS_TEAM_1 = [(self.SPAWN_OFFSET+i*self.SPAWN_OFFSET, 0) for i in range(self.NUM_PLAYERS_PER_TEAM)]
         self.SPAWN_POSITIONS_TEAM_2 = [(self.SPAWN_OFFSET+i*self.SPAWN_OFFSET, self.WINDOW_HEIGHT-self.BLOCKSIZE) for i in range(self.NUM_PLAYERS_PER_TEAM)]
 
-        self.TEAM1 = [Player(tag=f"p{i}_t1", spawnPosition=self.SPAWN_POSITIONS_TEAM_1[i]) for i in range(self.NUM_PLAYERS_PER_TEAM)]
+        self.TEAM1 = [Player(tag=f"p{i}_t1", spawnPosition=self.SPAWN_POSITIONS_TEAM_1[i], aos_metric=self.BLOCKSIZE) for i in range(self.NUM_PLAYERS_PER_TEAM)]
         self.TEAM1_REMAINING = len(self.TEAM1)
-        self.TEAM2 = [Player(tag=f"p{i}_t2", spawnPosition=self.SPAWN_POSITIONS_TEAM_2[i]) for i in range(self.NUM_PLAYERS_PER_TEAM)]
+        self.TEAM2 = [Player(tag=f"p{i}_t2", spawnPosition=self.SPAWN_POSITIONS_TEAM_2[i], aos_metric=self.BLOCKSIZE) for i in range(self.NUM_PLAYERS_PER_TEAM)]
         self.TEAM2_REMAINING = len(self.TEAM2)
 
         self.PLAYERS = self.TEAM1+self.TEAM2
@@ -198,7 +198,7 @@ class Interface():
         for player1 in self.TEAM1:
             for player2 in self.TEAM2:
                 # if player1.position == player2.position and player1.isAlive and player2.isAlive:
-                if player1.isAlive and player2.isAlive and player1.position==player2.position:#(player1.position[0]==player2.position[0]-self.SPACE_UNIT or player1.position[0]==player2.position[0]+self.SPACE_UNIT or player1.position[1]==player2.position[1]-self.SPACE_UNIT or player1.position[1]==player2.position[1]+self.SPACE_UNIT):
+                if player1.isAlive and player2.isAlive and (player1.position in player2.aos or player2.position in player1.aos):#(player1.position[0]==player2.position[0]-self.SPACE_UNIT or player1.position[0]==player2.position[0]+self.SPACE_UNIT or player1.position[1]==player2.position[1]-self.SPACE_UNIT or player1.position[1]==player2.position[1]+self.SPACE_UNIT):
                     # scelgo un numero a caso tra 0 ed 1
                     # se questo è maggiore di .5 allora vince player del team1
                     # altrimenti vince player del team2                    
