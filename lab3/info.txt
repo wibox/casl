@@ -1,0 +1,12 @@
+Write three different routines to generate  Bin(n,p)  random variables, each one using a  different approach as described in slides 57-60.
+
+Compare the efficiency of the routines (i.e. the time needed to generate K instances of the RV) in the following cases:
+
+n=10  p=0.5;
+n=100  p=0.01;
+n=106   p=10-5.
+Write a routine that generates a Normal random variables, by adopting an acceptance/rejection method.
+
+Test the efficiency of your generator and its accuracy  of your generator by comparing empirical average/variance/histogram/cumulant with  the theoretical ones.
+
+(Warmly recommended) Write a routine that generates a Rice distributed random variable: https://en.wikipedia.org/wiki/Rice_distribution
