@@ -1,10 +1,15 @@
 import numpy as np
 import scipy.special as ss
-from scipy.stats import binom
 import matplotlib.pyplot as plt
+
+from scipy.stats import binom
+
 import time
 
 def plot_pdf(x, pdf):
+    """
+    The only role of this function is to plot a specific pdf thorugh the corresponding boolean variable.
+    """
     fig, ax = plt.subplots(figsize=(5,5))
     ax.plot(x, pdf, color="red")
     ax.set_xlabel("Points")
@@ -13,6 +18,9 @@ def plot_pdf(x, pdf):
     plt.show()
 
 def plot_rv(results, probs, num_istances):
+    """
+    The only role of this function is to plot a specific pdf thorugh the corresponding boolean variable.
+    """
     fig, ax = plt.subplots(1, 2, figsize=(5,5))
 
     ax[0].scatter([i for i in range(num_istances)], probs)
@@ -213,3 +221,10 @@ def rice(n, s):
     W = chisquared(2*N+2)
     #Generating Rice.
     return s*np.sqrt(W)
+
+def normal_confrontation(num_istances):
+    
+    istances = np.array([
+        normal_acceptance(num_points=100, mean=0, s=1, a=-5, b=5, num_istances=1, plot_pdf=False) for _ in range(num_istances)
+    ])
+    return istances.mean, istances.std
