@@ -1,0 +1,36 @@
+1) ASSUMPTIONS
+The system is composed by a certain number of Balls and Bins.
+Each ball has a single property that is the bin it belongs to once it has been dropped.
+Each bin has two properties which are the numbers of balls dropped inside it and it's unique id.
+Each ball can be dropped just once and can belong to one and one bin only.
+The way each ball is dropped, independently of the chosen algorithm, is governed by an instance of the Uniform distribution.
+2) INPUT PARAMETERS
+Number of balls
+Number of bins
+Algorithm to follow for the dropping policy
+    - D(=number of bins randomly selected) in case load balancing is selected
+3) OUTPUT METRICS
+Maximum occupancy
+Minimum occupancy
+Average occupancy
+4) MAIN DATA STRUCTURE
+Bin object to store its properties
+Ball object to store its property
+List to store ball's and bin's classes instances
+5) MAIN ALGORITHMS
+    - Simple dropping:
+        for ball in balls:
+            scan beans and update least occupied one
+            drop ball inside least occupied one
+        endfor
+    - Random dropping:
+        for ball in balls: 
+            select random bin (independently of its occupation status)
+            drop ball inside selected bin
+        endfor
+    - Random dropping with load balancing:
+        for ball in balls:
+            select random bin B1.
+            select random bin B2
+            drop ball inside least occupied bin among the two previously selected.
+        endfor
