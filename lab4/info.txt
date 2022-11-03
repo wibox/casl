@@ -30,7 +30,10 @@ List to store ball's and bin's classes instances
         endfor
     - Random dropping with load balancing:
         for ball in balls:
-            select random bin B1.
-            select random bin B2
-            drop ball inside least occupied bin among the two previously selected.
+            select D bins randomly independently of their occupation status
+            drop ball inside least occupied bin among the D previously selected.
         endfor
+6) Possible extensions
+Load balancer design for huge networking architectures
+Large queues design (multiple users, multiple servers)
+Agricultural applications (bin's occupation status could represent soil's stress level)
