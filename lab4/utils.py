@@ -72,10 +72,10 @@ def ci_vis(filenames, save_bool):
         )
 
         ax.set_title("Policies performance and confidence interval", fontweight = "bold")
-        # ax.set_xscale("log")
+        ax.set_xscale("log")
         ax.set_xlabel("Number of elements")
-        ax.set_ylabel("Maximum occupancy")
+        ax.set_ylabel("Maximum occupancy (95% CI)")
         ax.grid()
 
     if save_bool:
-        plt.savefig("result/results.svg")
+        plt.savefig("result/results.png")

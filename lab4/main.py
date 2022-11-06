@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--log-info", type=bool, default=False)
 args = parser.parse_args()
 
-SEEDS = [299266, 247548, 777, 9283570324]
+SEEDS = [299266, 247548, 777, 9283]
 NUM_ELEMENTS = [10, 50, 100, 500, 750, 1000, 5000, 7500, 10000, 50000, 75000, 100000, 500000, 750000, 1000000]
 LOGF = [
     "rnd",
@@ -42,6 +42,7 @@ if __name__ == "__main__":
         print(f"Using number of elements: {num_items}")
         for seed in SEEDS:
             print(f"\tUsing seed: {seed}")
+            np.random.seed(seed=seed)
 
             # Random dropping
             reset(num_items)
@@ -81,4 +82,5 @@ if __name__ == "__main__":
             log_to_file(filename="logs/log_ld2.csv", entry=f"{num_items},{max_occ_ld2},{min_occ_ld2}\n")
             log_to_file(filename="logs/log_ld4.csv", entry=f"{num_items},{max_occ_ld4},{min_occ_ld4}\n")
     # Visualize final results
+    print(f"Theoretical max occupancy for \n\t rnd:{np.log(NUM_ELEMENTS[-1])/np.log(np.log(NUM_ELEMENTS[-1]))} \n\t ld2:{np.log(np.log(NUM_ELEMENTS[-1]))/np.log(2)} \n\t ld4:{np.log(np.log(NUM_ELEMENTS[-1]))/np.log(4)}")
     ci_vis([f"logs/log_{fn}.csv" for fn in LOGF], save_bool=True)
