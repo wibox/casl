@@ -36,14 +36,14 @@ min_occ_ld4_arr = list()
 if __name__ == "__main__":
     # Writing headers to corresponding log files
     for fn in LOGF:
-        log_file_header(filename=f"log_{fn}.csv", header="num_elements,max_occupancy,min_occupancy\n")
+        log_file_header(filename=f"logs/log_{fn}.csv", header="num_elements,max_occupancy,min_occupancy\n")
 
     for num_items in NUM_ELEMENTS:
         print(f"Using number of elements: {num_items}")
         for seed in SEEDS:
             print(f"\tUsing seed: {seed}")
 
-            # Random Dropping
+            # Random dropping
             reset(num_items)
             random_dropping(bins=bins, balls=balls)
             max_occ_rnd, min_occ_rnd = log(bins)
@@ -77,8 +77,8 @@ if __name__ == "__main__":
 
             # visualize_barplots("results", max_occ_rnd, max_occ_ld2, max_occ_ld4, num_experiments=len(SEEDS)-1, save_bool=False)
             # Logging informations to file
-            log_to_file(filename="log_rnd.csv", entry=f"{num_items},{max_occ_rnd},{min_occ_rnd}\n")
-            log_to_file(filename="log_ld2.csv", entry=f"{num_items},{max_occ_ld2},{min_occ_ld2}\n")
-            log_to_file(filename="log_ld4.csv", entry=f"{num_items},{max_occ_ld4},{min_occ_ld4}\n")
+            log_to_file(filename="logs/log_rnd.csv", entry=f"{num_items},{max_occ_rnd},{min_occ_rnd}\n")
+            log_to_file(filename="logs/log_ld2.csv", entry=f"{num_items},{max_occ_ld2},{min_occ_ld2}\n")
+            log_to_file(filename="logs/log_ld4.csv", entry=f"{num_items},{max_occ_ld4},{min_occ_ld4}\n")
     # Visualize final results
-    ci_vis([f"log_{fn}.csv" for fn in LOGF], save_bool=True)
+    ci_vis([f"logs/log_{fn}.csv" for fn in LOGF], save_bool=True)

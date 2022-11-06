@@ -56,25 +56,26 @@ def confidence_interval(vector):
     return t.interval(confidence=.9, df=3, loc=np.mean(vector), scale=np.var(vector))
 
 def ci_vis(filenames, save_bool):
-    fig, ax = plt.subplots(figsize=(15, 20), nrows=len(filenames))
+    fig, ax = plt.subplots(figsize=(20, 10), nrows=1)
 
-    for filename, idx in zip(filenames, range(len(filenames))):
+    for filename in filenames:
         df = pd.read_csv(filename)
         alg = filename.split(".")[0].split("_")[1]
         sns.lineplot(
-            ax=ax[idx],
+            ax=ax,
             x=df.iloc[:, 0],
             y=df.iloc[:, 1],
             data=df,
             errorbar="ci",
-            linewidth=0.5
+            linewidth=1.5,
+            label=f"{filename.split('/')[1].split('.')[0].split('_')[1]}"
         )
 
-        ax[idx].set_title(f"{alg} policy performance and confidence interval", fontweight = "bold")
-        ax[idx].set_xscale("log")
-        ax[idx].set_xlabel("Number of elements")
-        ax[idx].set_ylabel("Maximum occupancy")
-        ax[idx].grid()
+        ax.set_title("Policies performance and confidence interval", fontweight = "bold")
+        # ax.set_xscale("log")
+        ax.set_xlabel("Number of elements")
+        ax.set_ylabel("Maximum occupancy")
+        ax.grid()
 
     if save_bool:
-        plt.savefig("results.svg")
+        plt.savefig("result/results.svg")
