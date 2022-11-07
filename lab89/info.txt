@@ -1,0 +1,34 @@
+1) ASSUMPTIONS
+    There is no particular constraint on the cardinality of the set to run the simulation on.
+    In the absence of an empirical distribution to sue for the birthdays(or the general property 
+        in case the extension is being considered) a uniformly distributed random variable will be used.
+        
+2) INPUT PARAMETERS
+    - Parameter regarding the type of distribution to use for the data (Uniform/real from csv file)
+    - Cardinality of the population
+    - Seeds
+
+3) OUTPUT METRICS
+    - Average number of people to observe a conflict.
+    - Probability of a birthday conflict in function of the cardinality of the population.
+    - Accuracy with theoretical results.
+
+4) DATA STRUCTURES
+    - List of objects to store information about the property on which to check possible conflicts.
+    - An object representing either people or a general element with one single property that's the one
+        we want to assert the conflict on.
+
+5) MAIN ALGORITHMS
+    - To evaluate the average number of conflicts:
+        for object in objects:
+            check if current_obj collides with any other_obj
+            counter++
+            stop
+        recreate population with according distribution and cardinality
+
+    - To evaluate the probability in function of the chosen cardinality:
+            Compute probability p_exp
+            return p_exp, p_exp/p_theoretical * 100
+
+6) EXTENSIONS
+    Generalized version of the birthday problem.
