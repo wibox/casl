@@ -1,6 +1,6 @@
 1) ASSUMPTIONS
     There is no particular constraint on the cardinality of the set to run the simulation on.
-    In the absence of an empirical distribution to sue for the birthdays(or the general property 
+    In the absence of an empirical distribution to use for the birthdays(or the general property 
         in case the extension is being considered) a uniformly distributed random variable will be used.
         
 2) INPUT PARAMETERS
