@@ -44,31 +44,7 @@ def plot_result(title : str, filepath : str, filename : str, events : List[int],
     ax.plot(events, probs)
     ax.set_xlabel("Size of instance")
     ax.set_ylabel("Probability to experience a conflict")
-    plt.suptitle(title)
+    plt.title(title)
     plt.grid()
     plt.show()
     plt.savefig(os.path.join(filepath, filename))
-
-def uniform_analysis(cardinalities : List[int], upper_bound : int):
-    counter = 0
-    conflicts = list()
-    lengths = list()
-    probs = list()
-    # generate uniformly distributed set for each cardiality
-    for cardinality in cardinalities:
-        new_set = generate_uniform_set(m=cardinality, upper_bound=upper_bound)
-        # check if a conflict is experienced
-        conflict = check_for_conflicts(test_set=new_set, upper_bound=upper_bound)
-        if conflict:
-            counter += 1
-            conflicts.append(len(new_set))
-        lengths.append(len(new_set))
-        probs.append(counter / len(cardinalities))
-    # compute average number of objects to experience conflict
-    print(f"Average: {np.mean(conflicts)}")
-    # estimate probability
-    plot_result(title="uniform", filepath="results/", filename="uniform.png", events=lengths, probs=probs)
-    pass
-
-def real_analysis():
-    pass
