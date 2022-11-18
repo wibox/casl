@@ -1,12 +1,10 @@
 import numpy as np
 
-np.random.seed(123456789)
-
 current_time = 0
 SIMULATION_TIME = 100000
 
-LAMBDA = 3
-MU = 4
+LAMBDA = np.random.random()
+MU = np.random.random()
 
 customers = 0
 
@@ -57,6 +55,7 @@ if __name__ == '__main__':
     queue.append(Customer(type="arrival", arrival_time=0))
     myLogger = Logger()
     while(current_time < SIMULATION_TIME) or (not FES):
+        FES = sorted(FES, key=lambda x : x[0])
         time, event_type = FES.pop(0)
         current_time = time
         if len(queue) > 0:
@@ -67,4 +66,3 @@ if __name__ == '__main__':
         else:
             print("Queue is empty. Terminating.")
             break
-        FES = sorted(FES, key=lambda x : x[0])
