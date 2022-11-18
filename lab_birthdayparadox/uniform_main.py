@@ -14,7 +14,8 @@ SEED = 299266
 np.random.seed(SEED)
 
 # picking a random integer to decide the size of the set generator
-INSTANCES = [i for i in range(2, np.random.randint(low=10, high=100))]
+# INSTANCES = [i for i in range(2, np.random.randint(low=10, high=100))]
+INSTANCES = [i for i  in range(10, 110, 10)]
 
 # list into which append the size of the set 
 conflicts = list()
@@ -39,4 +40,4 @@ if __name__ == "__main__":
         probs.append(counter/len(INSTANCES))
     print(f"Average number of objects to experience a conflict when property uniformely distributed: {np.mean(conflicts)}")
     # now we evaluate the probability of experiencing a conflict in function of m when property is uniformely distributed.
-    plot_result(filename=None, events=lengths, probs=probs)
+    plot_result(title="uniform", filepath="results/", filename="uniform_test.svg", events=lengths, probs=probs)

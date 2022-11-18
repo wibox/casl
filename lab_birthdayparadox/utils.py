@@ -2,13 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from typing import *
+import os
 
 class Property():
     def __init__(self, upper_bound):
         self.upper_bound = upper_bound
         self.prop = 0
 
-    def generate_uniform_prop(self):
+    def generate_uniform_prop(self) -> int:
         self.prop = np.random.randint(low=1,high=self.upper_bound)
         return self.prop
 
@@ -17,7 +18,7 @@ class Obj():
         self.id = id
         self.prop = prop
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Object: {self.id} -> {self.prop}"
 
 def generate_uniform_set(m : int, upper_bound : int) -> List[Obj]:
@@ -27,18 +28,22 @@ def generate_uniform_set(m : int, upper_bound : int) -> List[Obj]:
     """
     return [Obj(id=i,prop=Property(upper_bound=365).generate_uniform_prop()).prop for i in range(m)]
 
-def generate_real_set(m : int) -> List[Obj]:
-    pass
-
 def check_for_conflicts(test_set : List[Obj], upper_bound : int) -> Tuple[bool, int]:
-    lookup_table = [0 for _ in range(upper_bound)]
+    counter = 0
+    lookup_table = [0 for _ in range(1, upper_bound + 1)]
     for prop in test_set:
         lookup_table[prop] += 1
         if lookup_table[prop] > 1:
-            return True, len(test_set)
-    return False, len(test_set)
+            counter += 1
+            return True, counter
+    return False, counter
 
-def plot_result(filename : str, events : List[int], probs : List[int]) -> None:
+def plot_result(title : str, filepath : str, filename : str, events : List[int], probs : List[int], savefig_bool : bool = True) -> None:
     fig, ax = plt.subplots(figsize=(10, 15))
     ax.plot(events, probs)
+    ax.set_xlabel("Size of instance")
+    ax.set_ylabel("Probability to experience a conflict")
+    plt.suptitle(title)
+    plt.grid()
     plt.show()
+    plt.savefig(os.path.join(filepath, filename))
