@@ -19,23 +19,29 @@ np.random.seed(SEED)
 
 EXP_PER_INSTANCE = 100
 INSTANCES = [i for i  in range(10, 110, 10)]
-DIST_TYPEs = ["uniform", "real"]  
+DIST_TYPES = ["uniform", "real"]  
 
 def main():
     # for each kind of property distribution
-    avg_dict = dict()
-    for dist_type in DIST_TYPEs:
-        print(f"Using {dist_type} distribution to generate property")
+    avg_dict = {"dist_type":["Average Cardinality", "C.I.", "Theory avg. cardinality"]}
+    for dist_type in DIST_TYPES:
+        print(f"\nUsing {dist_type} distribution to generate property")
         # for each cardinality of the set under study
         global_lengths = list()
         global_probs = list()
-
         # study the average number of objects to experience a conflict w.r.t. their property
-        avg_cardinality = retrieve_avg_cardinality()
-        avg_ci = generate_avg_ci(cardinalities=INSTANCES)
+        avg_cardinality, glob_list = retrieve_avg_cardinality(
+                                                    experiments=EXP_PER_INSTANCE,
+                                                    dist_type=dist_type,
+                                                    probs=generate_real_probs(args.real_data),
+                                                    prop_upper_bound=args.prop_upper_bound
+                                                    )
+        # building the confidence interval for such measure
+        avg_ci = generate_avg_ci(cardinalities=glob_list)
+        # storing the final results for later logging
+        avg_dict[f"{dist_type}"] = [avg_cardinality, avg_ci, 1.25*np.sqrt(args.prop_upper_bound)]
 
-        avg_dict[f"{dist_type}"] = [avg_cardinality, avg_ci]
-
+        # prob. study
         for cardinality in INSTANCES:
             print(f"\tWorking with cardinality: {cardinality}. Performing {EXP_PER_INSTANCE} experiments")
             # study the probability of observing a conflict
@@ -60,7 +66,8 @@ def main():
             # building theoreical result
             theo_prob = theoretical_prob(m=global_lengths, prop_upper_bound=args.prop_upper_bound)
 
-        plot_result(title=f"Conflicts happening with {dist_type} distribution for property",
+        # plot final results
+        plot_results(title=f"Conflicts happening with {dist_type} distribution for property (birthday)",
                     filepath="results/",
                     filename=f"{dist_type}",
                     events=global_lengths,
@@ -69,6 +76,9 @@ def main():
                     lower_probs=lower_bound,
                     theo_probs=theo_prob,
                     savefig_bool=True)
+    # final logging
+    print("\n\t FINAL RESULTS PER DISTRIBUTION:")
+    print(tabulate(avg_dict, headers=["Uniform", "Real",], tablefmt="fancy_grid"))
                 
 if __name__ == "__main__":
     main()
