@@ -167,3 +167,30 @@ def plot_results(title : str,
     plt.show()
     if savefig_bool:
         fig.savefig(os.path.join(filepath, filename))
+
+    
+def plot_upper_bounds(title : str,
+                filepath : str,
+                filename : str,
+                events : List[int],
+                exp_probs : List[List[float]],
+                theo_probs : List[List[float]],
+                labels : List[str],
+                upper_probs : List[List[float]] = None,
+                lower_probs : List[List[float]] = None,
+                savefig_bool : bool = True) -> None:
+
+    fig, ax = plt.subplots(figsize=(10, 15))
+    for exp_prob, theo_prob, upper_prob, lower_prob, label in zip(exp_probs, theo_probs, upper_probs, lower_probs, labels):
+        ax.plot(events, exp_prob, label=f"empirical probability - {label}")
+        ax.plot(events, theo_prob, label=f"theoretical probability - {label}")
+        if upper_prob and lower_prob:
+            ax.fill_between(events, lower_prob, upper_prob, alpha=.5)
+    ax.set_xlabel("Cardinality of set")
+    ax.set_ylabel("Probability to experience a conflict")
+    plt.title(title)
+    plt.grid()
+    plt.legend()
+    plt.show()
+    if savefig_bool:
+        fig.savefig(os.path.join(filepath, filename))
