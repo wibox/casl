@@ -336,11 +336,29 @@ if __name__ == '__main__':
     myLogger = Logger(verbosity=args.verbose)
     log_p_header(header="utilization,service_time_distribution,ci_width\n", filepath="logs/", filename="width_log.csv")
     delay_det_transient = list()
+    det_transient_upper = list()
+    det_transient_lower = list()
+
     delay_exp_transient = list()
+    exp_transient_upper = list()
+    exp_transient_lower = list()
+
     delay_hyperexp_transient = list()
+    hyperexp_transient_upper = list()
+    hyperexp_transient_lower = list()
+
     delay_det_notransient = list()
+    det_notransient_upper = list()
+    det_notransient_lower = list()
+
     delay_exp_notransient = list()
+    exp_notransient_upper = list()
+    exp_notransient_lower = list()
+
     delay_hyperexp_notransient = list()
+    hyperexp_notransient_upper = list()
+    hyperexp_notransient_lower = list()
+
     for u in U:
         print(f"Utilization value: {u}.")
         for s_time_flag in S_TIME_FLAGS:
@@ -403,39 +421,72 @@ if __name__ == '__main__':
                             ylabel="Batched delays")
                 
             if s_time_flag == 'exp':
+
                 delay_exp_transient.append(np.mean(delays))
+                transient_exp_ci = t.interval(0.95, len(delays)-1, np.mean(delays), np.std(delays))
+                exp_transient_upper.append(transient_exp_ci[1])
+                exp_transient_lower.append(transient_exp_ci[0])
+
                 delay_exp_notransient.append(np.mean(delay_wo_transient))
+                notransient_exp_ci = t.interval(0.95, len(delay_wo_transient)-1, np.mean(delay_wo_transient), np.std(delay_wo_transient))
+                exp_notransient_upper.append(notransient_exp_ci[1])
+                exp_notransient_lower.append(notransient_exp_ci[0])
+
             elif s_time_flag == 'hyperexp':
+
                 delay_hyperexp_transient.append(np.mean(delays))
+                transient_hyperexp_ci = t.interval(0.95, len(delays)-1, np.mean(delays), np.std(delays))
+                hyperexp_transient_upper.append(transient_hyperexp_ci[1])
+                hyperexp_transient_lower.append(transient_hyperexp_ci[0])
+
                 delay_hyperexp_notransient.append(np.mean(delay_wo_transient))
+                notransient_hyperexp_ci = t.interval(0.95, len(delay_wo_transient)-1, np.mean(delay_wo_transient), np.std(delay_wo_transient))
+                hyperexp_notransient_upper.append(notransient_hyperexp_ci[1])
+                hyperexp_notransient_lower.append(notransient_hyperexp_ci[0])
+
             elif s_time_flag == 'det':
+
                 delay_det_transient.append(np.mean(delays))
+                transient_det_ci = t.interval(0.95, len(delays)-1, np.mean(delays), np.std(delays))
+                det_transient_upper.append(transient_det_ci[1])
+                det_transient_lower.append(transient_det_ci[0])
+
                 delay_det_notransient.append(np.mean(delay_wo_transient))
+                notransient_det_ci = t.interval(0.95, len(delay_wo_transient)-1, np.mean(delay_wo_transient), np.std(delay_wo_transient))
+                det_notransient_upper.append(notransient_det_ci[1])
+                det_notransient_lower.append(notransient_det_ci[0])
+
             else:
                 pass
 
-     
+    # plot average delay vs utilization per distribution (with transient)
     fig, ax = plt.subplots(figsize=(5, 5))
     ax.plot(U, delay_exp_transient, label="exp")
     ax.plot(U, delay_det_transient, label="det")
     ax.plot(U, delay_hyperexp_transient, label="hyperexp")
+    ax.fill_between(U, det_transient_lower, det_transient_upper, alpha=.5)
+    ax.fill_between(U, exp_transient_lower, exp_transient_upper, alpha=.5)
+    ax.fill_between(U, hyperexp_transient_lower, hyperexp_transient_upper, alpha=.5)
     ax.grid()
     ax.legend()
-    ax.set_xlabel(xlabel="Utilization")
+    ax.set_xlabel(xlabel="Utilisation")
     ax.set_ylabel(ylabel="Delay")
-    ax.set_title("Delay vs U (with transient)")
+    ax.set_title("Delay vs Utilisation (with transient)")
     fig.savefig(os.path.join("final_results/", "delayvsu_transient.png"))
     plt.close()
-
+    # plot average delay vs utilization per distribution (without transient)
     fig, ax = plt.subplots(figsize=(5, 5))
     ax.plot(U, delay_exp_notransient, label="exp")
     ax.plot(U, delay_det_notransient, label="det")
     ax.plot(U, delay_hyperexp_notransient, label="hyperexp")
+    ax.fill_between(U, det_notransient_lower, det_notransient_upper, alpha=.5)
+    ax.fill_between(U, exp_notransient_lower, exp_notransient_upper, alpha=.5)
+    ax.fill_between(U, hyperexp_notransient_lower, hyperexp_notransient_upper, alpha=.5)
     ax.grid()
     ax.legend()
-    ax.set_xlabel(xlabel="Utilization")
+    ax.set_xlabel(xlabel="Utilisation")
     ax.set_ylabel(ylabel="Delay")
-    ax.set_title("Delay vs U (no transient)")
+    ax.set_title("Delay vs Utilisation (no transient)")
     fig.savefig(os.path.join("final_results/", "delayvsu_notransient.png"))
     plt.close()
 
