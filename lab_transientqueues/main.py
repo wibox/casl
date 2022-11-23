@@ -226,6 +226,18 @@ def plot_batch_means(logger : Logger, u : float, service_time_flag : str, delays
         plt.savefig(os.path.join(filepath, filename))
     plt.close()
 
+def plot_delay_u(delays : List[float], label : List[str] , u : List[float], xlabel : str, ylabel : str, title : str, save_pic_flag : bool, show_flag : bool, filepath : str, filename : str) -> None:
+
+    fig, ax = plt.subplots(figsize=(5, 5))
+    ax.plot(u, delays, label=label)
+    ax.set_xlabel(xlabel=xlabel)
+    ax.set_ylabel(ylabel=ylabel)
+    ax.set_title(title)
+    if save_pic_flag:
+        fig.savefig(os.path.join(filepath, filename))
+    if show_flag:
+        fig.show()
+
 def remove_transient(s_time_flag : str, delays : List[float], u : float) -> Tuple[List[float], int]:
     """
     This function performs transient removal according to min/max normalization.
@@ -323,6 +335,12 @@ if __name__ == '__main__':
     #main event loop
     myLogger = Logger(verbosity=args.verbose)
     log_p_header(header="utilization,service_time_distribution,ci_width\n", filepath="logs/", filename="width_log.csv")
+    delay_det_transient = list()
+    delay_exp_transient = list()
+    delay_hyperexp_transient = list()
+    delay_det_notransient = list()
+    delay_exp_notransient = list()
+    delay_hyperexp_notransient = list()
     for u in U:
         print(f"Utilization value: {u}.")
         for s_time_flag in S_TIME_FLAGS:
@@ -383,5 +401,41 @@ if __name__ == '__main__':
                             label=f"{s_time_flag}",
                             xlabel="steps",
                             ylabel="Batched delays")
-            
+                
+            if s_time_flag == 'exp':
+                delay_exp_transient.append(np.mean(delays))
+                delay_exp_notransient.append(np.mean(delay_wo_transient))
+            elif s_time_flag == 'hyperexp':
+                delay_hyperexp_transient.append(np.mean(delays))
+                delay_hyperexp_notransient.append(np.mean(delay_wo_transient))
+            elif s_time_flag == 'det':
+                delay_det_transient.append(np.mean(delays))
+                delay_det_notransient.append(np.mean(delay_wo_transient))
+            else:
+                pass
+
+     
+    fig, ax = plt.subplots(figsize=(5, 5))
+    ax.plot(U, delay_exp_transient, label="exp")
+    ax.plot(U, delay_det_transient, label="det")
+    ax.plot(U, delay_hyperexp_transient, label="hyperexp")
+    ax.grid()
+    ax.legend()
+    ax.set_xlabel(xlabel="Utilization")
+    ax.set_ylabel(ylabel="Delay")
+    ax.set_title("Delay vs U (with transient)")
+    fig.savefig(os.path.join("final_results/", "delayvsu_transient.png"))
+    plt.close()
+
+    fig, ax = plt.subplots(figsize=(5, 5))
+    ax.plot(U, delay_exp_notransient, label="exp")
+    ax.plot(U, delay_det_notransient, label="det")
+    ax.plot(U, delay_hyperexp_notransient, label="hyperexp")
+    ax.grid()
+    ax.legend()
+    ax.set_xlabel(xlabel="Utilization")
+    ax.set_ylabel(ylabel="Delay")
+    ax.set_title("Delay vs U (no transient)")
+    fig.savefig(os.path.join("final_results/", "delayvsu_notransient.png"))
+    plt.close()
 
