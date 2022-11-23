@@ -10,6 +10,7 @@ import os
 parser = argparse.ArgumentParser()
 parser.add_argument("--verbose", type=int, help="Verbosity level for default logger.\n 0: logs nothing 1: logs high level events 2: logs everything (including queues arrivals and departures)", default=1)
 parser.add_argument("--starting-batches", type=int, help="Initial number of batches to perform batch means", default=10)
+parser.add_argument("--simulation-time", type=int, help="Maximum simulation time", default=100000)
 args = parser.parse_args()
 
 SIMULATION_TIME = 100000
@@ -412,7 +413,7 @@ if __name__ == '__main__':
                             delay_ci_lower=ci_lower,
                             delay_ci_upper=ci_upper,
                             filepath="batch_results/",
-                            filename=f"{u}_{s_time_flag}.png",
+                            filename=f"{u}_{s_time_flag}_batched.png",
                             show_flag=False,
                             save_pict_flag=True,
                             title=f"Batched : ({u}, {s_time_flag})",
