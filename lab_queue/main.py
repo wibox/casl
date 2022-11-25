@@ -25,8 +25,9 @@ def arrival(time, queue, FES, logger):
     customer = Customer(type="arrival", arrival_time=time)
     queue.append(customer)
     logger.log_arrival(time+inter_arrival, customers)
-    service_time = generate_service_time()
-    FES.append((time+service_time, "departure"))
+    if customers == 1:
+        service_time = generate_service_time()
+        FES.append((time+service_time, "departure"))
 
 def departure(time, queue, FES, logger):
     global customers
