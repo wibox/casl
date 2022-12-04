@@ -1,0 +1,17 @@
+1) SOFTWARE INPUT
+    The software takes as input the full text of Divina Commedia by Dante Alighieri, the cardinality of a sentence and the level
+    at which plagiarism is defined; it goes from 1 to cardinality(sentence) and checks the number of words contained in the matching sentence.
+
+2) SOFTWARE OUTPUT
+    The software outputs the level of plagiarism for each sentence found in the original text.
+
+6) PROCEDURE TO DEFINE A SENTENCE
+    A sentence is defined as a sliding windows over a verse (even though verses are not really preserved since \n characters are removed.)
+
+7) DATA STRUCTURE FOR ANTIPLAGIARISM
+    A set is gonna be used to store unique words and sentences. A list will contain the full list of sentences built according to
+    the previously defined criteria.
+
+8) ALGORITHM FOR ANTIPLAGIARISM
+    To check if there is a matching sentence in the original text the software just checks if the provided text or sentence is contained in
+    the original text.

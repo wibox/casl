@@ -1,7 +1,7 @@
 import numpy as np
 
 current_time = 0
-SIMULATION_TIME = 100000
+SIMULATION_TIME = 10000
 
 LAMBDA = np.random.random()
 MU = np.random.random()
