@@ -1,46 +1,47 @@
-import string
-
 from typing import *
+from utils import *
+import argparse
+import os
 
-SPECIAL_CHARACTERS = string.punctuation
-
-unique_words = set()
-
-def clean_text(text : str) -> str:
-    for special_char in SPECIAL_CHARACTERS:
-        text.replace(special_char, "")
-    return text
-
-def retrieve_sentences(text : str) -> List[str]:
-    sliding_idx = 0
-    sentences = list()
-    sentence = list()
-
-    text.replace("\n", "")
-    sentence = [text.split(" ")[sliding_idx+i] for i in range(4)]
-    sentences.append(sentence)
-    sliding_idx += 1
-    return sentences
-
+from pympler import asizeof as ao
 
 if __name__ == "__main__":
 
-    with open("divina_commedia.txt", "r", encoding="UTF-8") as divina_commedia:
-        word_counter = 0
-        verse_counter = 0
-        lines = divina_commedia.readlines()
-        for line in lines:
-            #clean each line
-            line = clean_text(line)
-            #count #verses
-            verse_counter += 1
-            #count #words
-            word_counter += len(line.split(" "))
-            #count #unique words
-            for word in line.split(" "):
-                if word != "":
-                    unique_words.add(word)
+    TOKEN_LENGTH = [4, 8]
+    myTokenizer = Tokenizer(
+            log_filename="formatted_verses.txt",
+            log_filepath="log/"
+        )
+    # COMPUTING REQUESTED QUANTITIES AND LOGGING CLEANED VERSES
+    words_counter, verses_counter, unique_words, computation_completed, formatted_lines = compute_statistics(filename="divina_commedia.txt", tokenizer=myTokenizer)
+    log_completed = myTokenizer.log_formatted_verses(formatted_lines)
+    if log_completed:
+        print(f"Logged formatted verses in: {os.path.join(myTokenizer.log_filepath, myTokenizer.log_filename)}")
 
-    print(f"Total number of words: {word_counter}")
-    print(f"Total number of verses: {verse_counter}")
-    print(f"Total number of distinc words: {len(unique_words)}")
+    if computation_completed:
+        print("\n Informations retrieved from selected text:")
+        print(f"\t Total number of words: {words_counter}")
+        print(f"\t Total number of verses: {verses_counter}")
+        print(f"\t Total number of distinc words: {unique_words}")
+        print(f"\t Whole unformatted file takes: {os.path.getsize('divina_commedia.txt')/1024} kilobytes")
+
+    # START TOKENIZATION AND FINGERPRINTING
+    print(f"\nBUILDING TOKENS WITH LENGTHS 4 AND 8...")
+
+    for token_length in TOKEN_LENGTH:
+        print(f"\t=====Working with {token_length}grams=====")
+        myTokenizer = Tokenizer(
+            log_filename=f"{token_length}grams.txt",
+            log_filepath="log/",
+            token_length=token_length
+        )
+
+        load_completed, unigrams = myTokenizer.load_formatted_text(filename="log/formatted_verses.txt")
+        if load_completed:
+            print("Loaded unigrams from formatted text.")
+        print(f"Building {token_length}grams...")
+        build_grams, grams, num_grams = myTokenizer.build_xgrams(unigrams=unigrams)
+        if build_grams:
+            print(f"Number of sentences stored: {num_grams}")
+            print(f"Logging {token_length}grams in {os.path.join(myTokenizer.log_filepath, myTokenizer.log_filename)}")
+            myTokenizer.log_xgrams(grams=grams)
