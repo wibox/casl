@@ -8,6 +8,7 @@ from pympler import asizeof as ao
 if __name__ == "__main__":
 
     TOKEN_LENGTH = [4, 8]
+    FP_PROBS = [pow(10, -i) for i in range(10)]
     myTokenizer = Tokenizer(
             log_filename="formatted_verses.txt",
             log_filepath="log/"
@@ -30,6 +31,7 @@ if __name__ == "__main__":
 
     for token_length in TOKEN_LENGTH:
         print(f"\t=====Working with {token_length}grams=====")
+
         myTokenizer = Tokenizer(
             log_filename=f"{token_length}grams.txt",
             log_filepath="log/",
@@ -39,9 +41,13 @@ if __name__ == "__main__":
         load_completed, unigrams = myTokenizer.load_formatted_text(filename="log/formatted_verses.txt")
         if load_completed:
             print("Loaded unigrams from formatted text.")
+
         print(f"Building {token_length}grams...")
+
         build_grams, grams, num_grams = myTokenizer.build_xgrams(unigrams=unigrams)
         if build_grams:
             print(f"Number of sentences stored: {num_grams}")
-            print(f"Logging {token_length}grams in {os.path.join(myTokenizer.log_filepath, myTokenizer.log_filename)}")
+            print(f"Memory occupancy of pure strings: {ao.asizeof(grams)/1024} kilobytes")
+            print(f"Memory occupancy of fingerprints: {ao.asizeof(compute_fingerprints_statistics(grams=grams, num_elements=len(grams), fp_prob=1e-7))} bytes")
+            print(f"Logging {token_length}grams in {os.path.join(myTokenizer.log_filepath, myTokenizer.log_filename)}...")
             myTokenizer.log_xgrams(grams=grams)

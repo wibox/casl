@@ -3,8 +3,7 @@ import string
 import re
 import os
 import traceback
-
-from pympler import asizeof as ao
+import hashlib
 
 class Tokenizer():
     def __init__(self, log_filename : str = None, log_filepath : str = "log/", token_length : int = 4):
@@ -50,21 +49,22 @@ class Tokenizer():
         finally:
             return completed, unigrams
 
-    def build_xgrams(self, unigrams : List[str] = None) -> Tuple[bool, List[str], int]:
+    def build_xgrams(self, unigrams : List[str] = None) -> Tuple[bool, Set[str], int]:
         """
         This function takes care of the tokenization of the full text. Since we want to build 4-grams and 8-grams
         the output of this function will be a list of strings of lenght 4 and 8, according to the specific instance of this class
         attribute value for self.token_length.
         """
         completed = False
-        xgrams = list()
+        xgrams = set()
         xgrams_counter = 0
         try:
             sliding_idx = 0
             num_possible_grams = len(unigrams)//self.token_length + len(unigrams)%self.token_length
             while sliding_idx < num_possible_grams:
                 xgram = [gram for gram in unigrams[sliding_idx:sliding_idx+self.token_length]]
-                xgrams.append(' '.join(xgram))
+                _curr_sentence = ' '.join(xgram)
+                xgrams.add(_curr_sentence)
                 xgrams_counter += 1
                 sliding_idx += 1
             completed = True
@@ -73,13 +73,28 @@ class Tokenizer():
         finally:
             return completed, xgrams, xgrams_counter
 
-    def log_xgrams(self, grams : List[str] = None) -> bool:
+    def log_xgrams(self, grams : Set[str] = None) -> bool:
         completed = False
         try:
             if grams is not None:
                 with open(f"{os.path.join(self.log_filepath, self.log_filename)}", "w") as logf:
                     for gram in grams:
                         logf.write(gram + "\n")
+                completed = True
+            else:
+                raise Exception
+        except Exception as e:
+            print(traceback.format_exc())
+        finally:
+            return completed
+
+    def log_fingerprints(self, fingerprints : Set[int] = None) -> bool:
+        completed = False
+        try:
+            if fingerprints is not None:
+                with open(f"{os.path.join(self.log_filepath, self.log_filename).split('.')[0]}_fingerprints.txt", "w") as logf:
+                    for fingerprint in fingerprints:
+                        logf.write(str(fingerprint) + "\n")
                 completed = True
             else:
                 raise Exception
@@ -116,3 +131,19 @@ def compute_statistics(filename : str = "divina_commedia.txt", tokenizer : Token
         print(traceback.format_exc())
     finally:
         return word_counter, verse_counter, len(unique_words), completed, formatted_lines
+
+def fp(sentence : str = None, n : int = 0) -> int:
+    """
+    This function returns the fingerprint of an input string in the range [0, n-1]
+    """
+    return int(hashlib.md5(sentence.encode('utf-8')).hexdigest(), 16) % n
+
+def plot_results():
+    pass
+
+def compute_fingerprints_statistics(grams : Set[str] = None, num_elements : int = 0, fp_prob : float = 0.0) -> Set[int]:
+    fingerprints = set()
+    _range = num_elements / fp_prob
+    for gram in grams:
+        fingerprints.add(fp(sentence=gram, n=_range))
+    return fingerprints
