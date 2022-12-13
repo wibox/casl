@@ -1,9 +1,65 @@
-from typing import *
 import string
 import re
 import os
 import traceback
 import hashlib
+
+from typing import *
+
+import matplotlib.pyplot as plt
+
+from tqdm import tqdm
+from pympler import asizeof as asof
+
+class FingerprintHandler():
+    def __init__(self, log_filename : str = None, log_filepath : str = None, n_bits : int = 16, n_elements : int = 0):
+        self.log_filename = log_filename
+        self.log_filepath = log_filepath
+        self.n_bits = n_bits
+        self.n_elements = n_elements
+        self.prfp = self._compute_prfp()
+
+    def _compute_prfp(self) -> float:
+        if self.n_elements > 0:
+            return 1 - pow(1 - (1/(pow(2, self.n_bits)-1)), self.n_elements)
+        else:
+            raise Exception(f"Please provide a few more elements. Found: {self.n_elements}")
+
+    def _compute_fp_range(self) -> int:
+        return pow(2, self.n_bits) - 1 
+
+    def _fp(self, sentence : str = None) -> int:
+        """
+        This function returns the fingerprint of an input string in the range [0, n-1]
+        """
+        n = self._compute_fp_range()
+        return int(hashlib.md5(sentence.encode('utf-8')).hexdigest(), 16) % n
+
+    def build_fingerprints(self, grams : Set[str] = None) -> Tuple[bool, Set[int], float, float]:
+        completed = False
+        fingerprints = set()
+        try:
+            if grams:
+                for gram in grams:
+                    fingerprints.add(self._fp(sentence=gram))
+                completed = True
+        except Exception as e:
+            print(e.format_exc())
+        finally:
+            return completed, fingerprints, self.n_bits/8, asof.asizeof(fingerprints)
+    
+    def log_fingerprints(self, fingerprints : Set[int] = None) -> bool:
+        completed = False
+        try:
+            if fingerprints:
+                with open(f"{os.path.join(self.log_filepath, self.log_filename)}", "w") as fp:
+                    for fingerprint in fingerprints:
+                        fp.write(str(fingerprint) + "\n")
+                completed = True
+        except Exception as e:
+            print(e.format_exc())
+        finally:
+            return completed
 
 class Tokenizer():
     def __init__(self, log_filename : str = None, log_filepath : str = "log/", token_length : int = 4):
@@ -57,21 +113,22 @@ class Tokenizer():
         """
         completed = False
         xgrams = set()
-        xgrams_counter = 0
+        num_sentences_generated = len(unigrams)
         try:
             sliding_idx = 0
-            num_possible_grams = len(unigrams)//self.token_length + len(unigrams)%self.token_length
-            while sliding_idx < num_possible_grams:
+            for _ in tqdm(range(len(unigrams))):
                 xgram = [gram for gram in unigrams[sliding_idx:sliding_idx+self.token_length]]
+                if " " in xgram:
+                    xgram.remove(" s")
                 _curr_sentence = ' '.join(xgram)
-                xgrams.add(_curr_sentence)
-                xgrams_counter += 1
-                sliding_idx += 1
+                if len(xgram) == self.token_length:
+                    xgrams.add(_curr_sentence)
+                    sliding_idx += 1
             completed = True
         except Exception as e:
             print(traceback.format_exc())
         finally:
-            return completed, xgrams, xgrams_counter
+            return completed, xgrams, num_sentences_generated
 
     def log_xgrams(self, grams : Set[str] = None) -> bool:
         completed = False
@@ -88,22 +145,7 @@ class Tokenizer():
         finally:
             return completed
 
-    def log_fingerprints(self, fingerprints : Set[int] = None) -> bool:
-        completed = False
-        try:
-            if fingerprints is not None:
-                with open(f"{os.path.join(self.log_filepath, self.log_filename).split('.')[0]}_fingerprints.txt", "w") as logf:
-                    for fingerprint in fingerprints:
-                        logf.write(str(fingerprint) + "\n")
-                completed = True
-            else:
-                raise Exception
-        except Exception as e:
-            print(traceback.format_exc())
-        finally:
-            return completed
-
-def compute_statistics(filename : str = "divina_commedia.txt", tokenizer : Tokenizer = Tokenizer()) -> Tuple[int, int, int, bool, List[str]]:
+def compute_text_info(filename : str = "divina_commedia.txt", tokenizer : Tokenizer = Tokenizer()) -> Tuple[int, int, int, bool, List[str]]:
     completed = False
     try:
         with open(f"{filename}", "r") as divina_commedia:
@@ -132,18 +174,19 @@ def compute_statistics(filename : str = "divina_commedia.txt", tokenizer : Token
     finally:
         return word_counter, verse_counter, len(unique_words), completed, formatted_lines
 
-def fp(sentence : str = None, n : int = 0) -> int:
-    """
-    This function returns the fingerprint of an input string in the range [0, n-1]
-    """
-    return int(hashlib.md5(sentence.encode('utf-8')).hexdigest(), 16) % n
-
-def plot_results():
-    pass
-
-def compute_fingerprints_statistics(grams : Set[str] = None, num_elements : int = 0, fp_prob : float = 0.0) -> Set[int]:
-    fingerprints = set()
-    _range = num_elements / fp_prob
-    for gram in grams:
-        fingerprints.add(fp(sentence=gram, n=_range))
-    return fingerprints
+def plot_results(x : List[float], y : List[int], xscale : str, yscale : str, xlabel : str, ylabel : str, title : str, filename : str, thr : int = None, filepath : str = "results/", save_fig_bool : bool = True):
+    
+    if not os.path.exists(filepath):
+        os.makedirs(filepath)
+    
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(x, y)
+    if thr:
+        ax.axhline(y=thr, color='r', linestyle='dotted')
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_title(title)
+    ax.set_xscale(xscale)
+    ax.set_yscale(yscale)
+    if save_fig_bool:
+        plt.savefig(os.path.join(filepath, filename))
