@@ -113,7 +113,8 @@ class Tokenizer():
         """
         completed = False
         xgrams = set()
-        num_sentences_generated = len(unigrams)
+        # num_sentences_generated = len(unigrams)
+        num_sentences_generated = 0
         try:
             sliding_idx = 0
             for _ in tqdm(range(len(unigrams))):
@@ -124,6 +125,7 @@ class Tokenizer():
                 if len(xgram) == self.token_length:
                     xgrams.add(_curr_sentence)
                     sliding_idx += 1
+                    num_sentences_generated += 1
             completed = True
         except Exception as e:
             print(traceback.format_exc())
