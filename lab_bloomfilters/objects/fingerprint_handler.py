@@ -1,5 +1,6 @@
 import os
 import hashlib
+import traceback
 
 from typing import *
 
@@ -30,18 +31,25 @@ class FingerprintHandler():
         n = self._compute_fp_range()
         return int(hashlib.md5(sentence.encode('utf-8')).hexdigest(), 16) % n
 
-    def build_fingerprints(self, grams : Set[str] = None) -> Tuple[bool, Set[int], float, float]:
+    def build_fingerprints(self, grams : Set[str] = None) -> Tuple[bool, bool, Set[int], float, float]:
         completed = False
+        conflict_found = False
         fingerprints = set()
         try:
             if grams:
                 for gram in grams:
-                    fingerprints.add(self._fp(sentence=gram))
+                    _curr_hash = self._fp(sentence=gram)
+                    if not _curr_hash in fingerprints:
+                        fingerprints.add(_curr_hash)
+                    else:
+                        print("\t\tConflict found.")
+                        conflict_found = True
+                        break
                 completed = True
         except Exception as e:
-            print(e.format_exc())
+            print(traceback.format_exc())
         finally:
-            return completed, fingerprints, self.n_bits/8, asof.asizeof(fingerprints)
+            return completed, conflict_found, fingerprints, self.n_bits/8, asof.asizeof(fingerprints)
     
     def log_fingerprints(self, fingerprints : Set[int] = None) -> bool:
         completed = False
@@ -52,6 +60,6 @@ class FingerprintHandler():
                         fp.write(str(fingerprint) + "\n")
                 completed = True
         except Exception as e:
-            print(e.format_exc())
+            print(traceback.format_exc())
         finally:
             return completed

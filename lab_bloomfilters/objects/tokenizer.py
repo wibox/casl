@@ -4,15 +4,17 @@ import os
 import traceback
 
 from tqdm import tqdm
+from pympler import asizeof as ao
 
 from typing import *
 
 class Tokenizer():
-    def __init__(self, log_filename : str = None, log_filepath : str = "log/", token_length : int = 6):
+    def __init__(self, log_filename : str = "formatted_verses.txt", log_filepath : str = "log/", gram_filename : str = "sentences.txt", token_length : int = 6):
         self.allowed_chars = ["'"]
         self.SPECIAL_CHARACTERS = [x for x in string.punctuation if x not in self.allowed_chars]
         self.log_filepath = log_filepath
         self.log_filename = log_filename
+        self.gram_filename = gram_filename
         self.token_length = token_length
 
     def clean_line(self, verse : str) -> str:
@@ -51,7 +53,7 @@ class Tokenizer():
         finally:
             return completed, unigrams
 
-    def build_xgrams(self, unigrams : List[str] = None) -> Tuple[bool, Set[str], int]:
+    def build_xgrams(self, unigrams : List[str] = None) -> Tuple[bool, Set[str], float, int, float]:
         """
         This function takes care of the tokenization of the full text. Since we want to build 4-grams and 8-grams
         the output of this function will be a list of strings of lenght 4 and 8, according to the specific instance of this class
@@ -61,6 +63,7 @@ class Tokenizer():
         xgrams = set()
         # num_sentences_generated = len(unigrams)
         num_sentences_generated = 0
+        sentence_size = .0
         try:
             sliding_idx = 0
             for _ in tqdm(range(len(unigrams))):
@@ -70,19 +73,20 @@ class Tokenizer():
                 _curr_sentence = ' '.join(xgram)
                 if len(xgram) == self.token_length:
                     xgrams.add(_curr_sentence)
+                    sentence_size += ao.asizeof(_curr_sentence)
                     sliding_idx += 1
                     num_sentences_generated += 1
             completed = True
         except Exception as e:
             print(traceback.format_exc())
         finally:
-            return completed, xgrams, num_sentences_generated
+            return completed, xgrams, ao.asizeof(xgrams), num_sentences_generated, sentence_size/len(xgrams)
 
     def log_xgrams(self, grams : Set[str] = None) -> bool:
         completed = False
         try:
             if grams is not None:
-                with open(f"{os.path.join(self.log_filepath, self.log_filename)}", "w") as logf:
+                with open(f"{os.path.join(self.log_filepath, self.gram_filename)}", "w") as logf:
                     for gram in grams:
                         logf.write(gram + "\n")
                 completed = True
