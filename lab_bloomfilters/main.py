@@ -52,15 +52,15 @@ if __name__ == "__main__":
                                 n_elements=num_grams
                         )
     print("Computing minimum number of bits to achieve zero conflicts for fingerprints (prpf=0)...")
-    bits = [2*i for i in range(1, 33)]
-    prfps, best_prfp, max_bits = Helper.evaluate_theo_min_nbits(n_elements=num_grams, bits=bits)
+    fph_bits = [2*i for i in range(1, 33)]
+    prfps, best_prfp, max_bits_fph = Helper.evaluate_theo_min_nbits(n_elements=num_grams, bits=fph_bits)
     print(f"\tBest probability found: {best_prfp}")
-    print(f"\tCorresponding number of bits: {max_bits}")
+    print(f"\tCorresponding number of bits: {max_bits_fph}")
     print(f"\tLogging probabilities and corresponding bits in {os.path.join(Constants.LOG_FOLDER_PATH, Constants.PRFPS_FILENAME)}...")
     Helper.log_json(filepath=Constants.LOG_FOLDER_PATH, filename=Constants.PRFPS_FILENAME, json_obj=prfps)
 
     print("Simulating a real behavior:")
-    for bit in bits:
+    for bit in fph_bits:
         print(f"\tUsing {bit} bits")
         fph = FingerprintHandler(
                 log_filename=Constants.FP_FILENAME,
@@ -77,3 +77,24 @@ if __name__ == "__main__":
             print(f"Logging fingerprints in {os.path.join(myFingerprintHandler.log_filepath, myFingerprintHandler.log_filename)}...")
             fph.log_fingerprints(fingerprints=fingerprints)
             break
+
+    print("Stroring sentences using a BitString Array")
+    bsa_bits = [i for i in range(19, 24)]
+    bsa = BitStringArray(
+            log_filepath=Constants.PLOT_FOLDER_PATH,
+            log_filename=Constants.BSA_FILENAME,
+            bits=bsa_bits,
+            sentences=grams
+        )
+    prfp, collisions = bsa.simulate_prpf()
+    Helper.plot_results(
+        y = [prfp, collisions],
+        x = [[pow(2, bit) for bit in bsa_bits], [pow(2, bit) for bit in bsa_bits]],
+        xlabel= ["Bits used", "Bits used"],
+        ylabel = ["Pr[FP]", "Collisions found"],
+        ax_title = ["Probability of false positive in function of bits", "Collisions found in function of bits"],
+        fig_title = "BitString Array behaviour in function of memory occupancy",
+        save_fig_bool = True,
+        filepath = Constants.PLOT_FOLDER_PATH,
+        filename = "bsa.png"
+    )

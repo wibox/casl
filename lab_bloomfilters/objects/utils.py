@@ -2,6 +2,7 @@ from .tokenizer import Tokenizer
 from .fingerprint_handler import FingerprintHandler
 
 from pympler import asizeof as ao
+import matplotlib.pyplot as plt
 
 import traceback
 import json
@@ -12,6 +13,7 @@ from typing import *
 class Constants:
 
     LOG_FOLDER_PATH = "log/"
+    PLOT_FOLDER_PATH = "plots/"
     
     FORMATTED_TEXT_FILENAME = "formatted_verses.txt"
     
@@ -22,7 +24,35 @@ class Constants:
 
     PRFPS_FILENAME = "prfps.txt"
 
+    BSA_FILENAME = "bsa"
+
 class Helper:
+
+    @staticmethod
+    def plot_results(
+        x : List[List[float]],
+        y : List[List[float]],
+        xlabel : List[str],
+        ylabel : List[str],
+        ax_title : List[str],
+        fig_title : str,
+        save_fig_bool : bool,
+        filepath : str,
+        filename : str
+    ) -> None:
+        assert len(x) == len(y), "Size mismatch in input."
+        num_plots = len(x)
+        fig, axs = plt.subplots(1, num_plots, figsize=(5*num_plots, 5))
+        fig.suptitle(fig_title)
+        for x_el, y_el, xlabel_el, ylabel_el, title_el, idx in zip(x, y, xlabel, ylabel, ax_title, range(num_plots)):
+            axs[idx].plot(x_el, y_el)
+            axs[idx].grid()
+            axs[idx].set_xlabel(xlabel_el)
+            axs[idx].set_ylabel(ylabel_el)
+            axs[idx].set_title(title_el)
+            if save_fig_bool:
+                print(f"Saving picture in {os.path.join(filepath, filename)}")
+                plt.savefig(os.path.join(filepath, filename))
 
     @staticmethod
     def log_json(filename : str, filepath : str, json_obj : Dict[int, float] = None) -> bool:
