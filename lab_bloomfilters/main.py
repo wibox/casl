@@ -87,10 +87,12 @@ if __name__ == "__main__":
             sentences=grams
         )
     prfp, collisions = bsa.simulate_prpf()
+    theo_prfp = bsa.theo_prfp()
     Helper.plot_results(
-        y = [prfp, collisions],
+        y = [[prfp, theo_prfp], [collisions]],
         x = [[pow(2, bit) for bit in bsa_bits], [pow(2, bit) for bit in bsa_bits]],
-        xlabel= ["Bits used", "Bits used"],
+        legend_handles=[["prfp", "theo_prfp"], ["collisions"]],
+        xlabel= ["Memory (bits)", "Memory (bits)"],
         ylabel = ["Pr[FP]", "Collisions found"],
         ax_title = ["Probability of false positive in function of bits", "Collisions found in function of bits"],
         fig_title = "BitString Array behaviour in function of memory occupancy",

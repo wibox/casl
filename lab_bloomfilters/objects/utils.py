@@ -31,7 +31,8 @@ class Helper:
     @staticmethod
     def plot_results(
         x : List[List[float]],
-        y : List[List[float]],
+        y : List[List[List[float]]],
+        legend_handles : List[List[str]],
         xlabel : List[str],
         ylabel : List[str],
         ax_title : List[str],
@@ -41,18 +42,21 @@ class Helper:
         filename : str
     ) -> None:
         assert len(x) == len(y), "Size mismatch in input."
-        num_plots = len(x)
-        fig, axs = plt.subplots(1, num_plots, figsize=(5*num_plots, 5))
+        num_plots = len(y)
+        fig, axs = plt.subplots(1, num_plots, figsize=(6*num_plots, 5))
         fig.suptitle(fig_title)
-        for x_el, y_el, xlabel_el, ylabel_el, title_el, idx in zip(x, y, xlabel, ylabel, ax_title, range(num_plots)):
-            axs[idx].plot(x_el, y_el)
+        for x_el, y_el, legend_handle, xlabel_el, ylabel_el, title_el, idx in zip(x, y, legend_handles, xlabel, ylabel, ax_title, range(num_plots)):
             axs[idx].grid()
-            axs[idx].set_xlabel(xlabel_el)
-            axs[idx].set_ylabel(ylabel_el)
-            axs[idx].set_title(title_el)
-            if save_fig_bool:
-                print(f"Saving picture in {os.path.join(filepath, filename)}")
-                plt.savefig(os.path.join(filepath, filename))
+            for sub_y, sub_handle in zip(y_el, legend_handle):
+                axs[idx].plot(x_el, sub_y, label=sub_handle)
+                axs[idx].set_xlabel(xlabel_el)
+                axs[idx].set_ylabel(ylabel_el)
+                axs[idx].set_title(title_el)
+                axs[idx].legend()
+
+        if save_fig_bool:
+            print(f"Saving picture in {os.path.join(filepath, filename)}")
+            plt.savefig(os.path.join(filepath, filename))
 
     @staticmethod
     def log_json(filename : str, filepath : str, json_obj : Dict[int, float] = None) -> bool:
