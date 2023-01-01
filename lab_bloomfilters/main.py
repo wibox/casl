@@ -18,11 +18,17 @@ if __name__ == "__main__":
                 )
 
     # computing initial quantities
-    words_counter, verses_counter, unique_words, computation_completed, formatted_lines = Helper.compute_text_info(filename="divina_commedia.txt", tokenizer=myTokenizer)
+    print(f"Performing preprocessing over {args.filename}...")
+    words_counter,\
+         verses_counter,\
+             unique_words,\
+                 computation_completed,\
+                     formatted_lines = Helper.compute_text_info(filename="divina_commedia.txt", tokenizer=myTokenizer)
     log_completed = myTokenizer.log_formatted_verses(formatted_lines)
     
     if log_completed:
         print(f"Logged formatted verses in: {os.path.join(myTokenizer.log_filepath, myTokenizer.log_filename)}")
+        Helper.format_output(width=os.get_terminal_size()[0])
     
     if computation_completed:
         print("Informations retrieved from selected text:")
@@ -30,14 +36,21 @@ if __name__ == "__main__":
         print(f"\t Total number of verses: {verses_counter}")
         print(f"\t Total number of distinc words: {unique_words}")
         print(f"\t Whole formatted file takes: {os.path.getsize(os.path.join(Constants.LOG_FOLDER_PATH, Constants.FORMATTED_TEXT_FILENAME))/1024:.1f} kilobytes")
+        Helper.format_output(width=os.get_terminal_size()[0])
 
-    load_completed, unigrams = myTokenizer.load_formatted_text(filename=os.path.join(Constants.LOG_FOLDER_PATH, Constants.FORMATTED_TEXT_FILENAME))
+    load_completed, unigrams = myTokenizer.load_formatted_text(
+            filename=os.path.join(Constants.LOG_FOLDER_PATH, Constants.FORMATTED_TEXT_FILENAME)
+        )
     if load_completed:
         print("Loaded unigrams from formatted text.")
 
     print(f"Building {Constants.GRAM_SIZE}grams...")
 
-    build_grams, grams, grams_occupancy, num_grams, avg_gram_occupancy = myTokenizer.build_xgrams(unigrams=unigrams)
+    build_grams,\
+         grams,\
+             grams_occupancy,\
+                 num_grams,\
+                     avg_gram_occupancy = myTokenizer.build_xgrams(unigrams=unigrams)
     if build_grams:
         print(f"Number of sentences generated: {num_grams}")
         print(f"Number of sentences in set (unique sentences): {len(grams)}")
@@ -45,6 +58,7 @@ if __name__ == "__main__":
         print(f"Average memory occupancy of each sentence: {avg_gram_occupancy:.2f} bytes")
         print(f"Logging {Constants.GRAM_SIZE}grams in {os.path.join(myTokenizer.log_filepath, myTokenizer.gram_filename)}...")
         myTokenizer.log_xgrams(grams=grams)
+        Helper.format_output(width=os.get_terminal_size()[0])
 
     myFingerprintHandler = FingerprintHandler(
                                 log_filename=Constants.FP_FILENAME,
@@ -57,8 +71,9 @@ if __name__ == "__main__":
     print(f"\tBest probability found: {best_prfp}")
     print(f"\tCorresponding number of bits: {max_bits_fph}")
     print(f"\tLogging probabilities and corresponding bits in {os.path.join(Constants.LOG_FOLDER_PATH, Constants.PRFPS_FILENAME)}...")
+    
     Helper.log_json(filepath=Constants.LOG_FOLDER_PATH, filename=Constants.PRFPS_FILENAME, json_obj=prfps)
-
+    
     print("Simulating a real behavior:")
     for bit in fph_bits:
         print(f"\tUsing {bit} bits")
@@ -78,25 +93,53 @@ if __name__ == "__main__":
             fph.log_fingerprints(fingerprints=fingerprints)
             break
 
-    print("Stroring sentences using a BitString Array")
+    Helper.format_output(width=os.get_terminal_size()[0])
+    print("Storing sentences using a BitString Array")
     bsa_bits = [i for i in range(19, 24)]
     bsa = BitStringArray(
-            log_filepath=Constants.PLOT_FOLDER_PATH,
+            log_filepath=Constants.LOG_FOLDER_PATH,
             log_filename=Constants.BSA_FILENAME,
             bits=bsa_bits,
             sentences=grams
         )
-    prfp, collisions = bsa.simulate_prpf()
-    theo_prfp = bsa.theo_prfp()
+    bsa_prfp, bsa_collisions = bsa.simulate_prpf()
+    bsa_theo_prfp = bsa.theo_prfp()
     Helper.plot_results(
-        y = [[prfp, theo_prfp], [collisions]],
+        y = [[bsa_prfp, bsa_theo_prfp], [bsa_collisions]],
         x = [[pow(2, bit) for bit in bsa_bits], [pow(2, bit) for bit in bsa_bits]],
-        legend_handles=[["prfp", "theo_prfp"], ["collisions"]],
+        legend_handles=[["Pr[FP]", "Pr[FP] theoretic"], ["Collisions"]],
+        category="BitString Array",
         xlabel= ["Memory (bits)", "Memory (bits)"],
         ylabel = ["Pr[FP]", "Collisions found"],
-        ax_title = ["Probability of false positive in function of bits", "Collisions found in function of bits"],
+        ax_title = ["Probability of false positive in function of memory occupancy", "Collisions found in function of memory occypancy"],
         fig_title = "BitString Array behaviour in function of memory occupancy",
         save_fig_bool = True,
         filepath = Constants.PLOT_FOLDER_PATH,
         filename = "bsa.png"
+    )
+
+    Helper.format_output(width=os.get_terminal_size()[0])
+    print("Storing sentences using a Bloom Filter")
+    bf_bits = bsa_bits
+    bf = BloomFilter(
+        log_filepath=Constants.LOG_FOLDER_PATH,
+        log_filename=Constants.BF_FILENAME,
+        bits=bf_bits,
+        sentences=grams,
+        opt_k=5
+        )
+    bf_prfp, bf_collisions = bf.simulate_prfp()
+    bf_theo_prfp = bf.theo_prfp()
+    Helper.plot_results(
+        y = [[bf_prfp, bf_theo_prfp], [bf_collisions]],
+        x = [[pow(2, bit) for bit in bf_bits], [pow(2, bit) for bit in bf_bits]],
+        legend_handles=[["Pr[FP]", "Pr[FP] theoretic"], ["Collisions"]],
+        category="Bloom Filter",
+        xlabel= ["Memory (bits)", "Memory (bits)"],
+        ylabel = ["Pr[FP]", "Collisions found"],
+        ax_title = ["Probability of false positive in function of bits", "Collisions found in function of bits"],
+        fig_title = "Bloom Filter behaviour in function of memory occupancy",
+        save_fig_bool = True,
+        filepath = Constants.PLOT_FOLDER_PATH,
+        filename = "bf.png"
     )

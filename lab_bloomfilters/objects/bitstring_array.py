@@ -1,4 +1,4 @@
-from .fingerprint_handler import FingerprintHandler
+from .utils import Helper
 
 import numpy as np
 
@@ -33,17 +33,17 @@ class BitStringArray():
         prfp = list()
         collisions_list = list()
         for bit in self.bits:
-            print(f"Storing fingerprints using {pow(2, bit)} bits")
-            bsa = self._initialise_bsa(range=pow(2, bit))
-            fph = FingerprintHandler(n_bits=bit, n_elements=len(self.sentences))
+            dimension = pow(2, bit)
+            print(f"\tStoring fingerprints using 2^{bit}={dimension} bits")
+            bsa = self._initialise_bsa(range=dimension)
             collisions = 0
             for sentence in self.sentences:
-                _fp = fph._fp(sentence=sentence)
+                _fp = Helper.compute_hash(sentence=sentence, bits=bit)
                 if bsa[_fp] == 1:
                     collisions += 1
                 else:
                     bsa[_fp] = 1
-            prfp.append(np.sum(bsa)/pow(2, bit))
+            prfp.append(np.sum(bsa)/dimension)
             collisions_list.append(collisions)
-            print(f"\tFound {collisions} collisions")
+            print(f"\t\tFound {collisions} collisions")
         return prfp, collisions_list

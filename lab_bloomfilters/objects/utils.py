@@ -5,6 +5,7 @@ from pympler import asizeof as ao
 import matplotlib.pyplot as plt
 
 import traceback
+import hashlib
 import json
 import os
 
@@ -14,25 +15,32 @@ class Constants:
 
     LOG_FOLDER_PATH = "log/"
     PLOT_FOLDER_PATH = "plots/"
-    
     FORMATTED_TEXT_FILENAME = "formatted_verses.txt"
-    
     GRAM_FILENAME = "grams.txt"
     GRAM_SIZE = 6
-
     FP_FILENAME = "fp.txt"
-
     PRFPS_FILENAME = "prfps.txt"
-
-    BSA_FILENAME = "bsa"
+    BSA_FILENAME = "bsa.txt"
+    BF_FILENAME = "bf.txt"
 
 class Helper:
+
+    @staticmethod
+    def format_output(width : int) -> None:
+        for _ in range(width):
+            print("=", end="")
+
+    @staticmethod
+    def compute_hash(sentence : str, bits : int) -> int:
+        n = pow(2, bits) - 1
+        return int(hashlib.md5(sentence.encode('utf-8')).hexdigest(), 16) % n
 
     @staticmethod
     def plot_results(
         x : List[List[float]],
         y : List[List[List[float]]],
         legend_handles : List[List[str]],
+        category : str,
         xlabel : List[str],
         ylabel : List[str],
         ax_title : List[str],
@@ -55,7 +63,7 @@ class Helper:
                 axs[idx].legend()
 
         if save_fig_bool:
-            print(f"Saving picture in {os.path.join(filepath, filename)}")
+            print(f"Saving picture with informations about {category} in {os.path.join(filepath, filename)}")
             plt.savefig(os.path.join(filepath, filename))
 
     @staticmethod
