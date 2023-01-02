@@ -7,6 +7,8 @@ from objects.parser import custom_parser
 
 import os
 
+import math
+
 if __name__ == "__main__":
     args = custom_parser()
 
@@ -121,12 +123,27 @@ if __name__ == "__main__":
     Helper.format_output(width=os.get_terminal_size()[0])
     print("Storing sentences using a Bloom Filter")
     bf_bits = bsa_bits
+    print("Computing optimal number of hashes in function of memory...")
+    bf_hashes = [round((pow(2, n)-1)/len(grams)*math.log(2)) for n in bf_bits]
+    Helper.plot_results(
+        y = [[bf_hashes]],
+        x = [[pow(2, bit) for bit in bf_bits]],
+        legend_handles=[["Number of hash functions"]],
+        category="optimal number of hash functions",
+        xlabel= ["Memory (bits)"],
+        ylabel = ["Optimal number of hash functions"],
+        ax_title = ["Optimal number of hash functions in function of memory(bits)"],
+        fig_title = "Bloom Filter design in function of memory occupancy",
+        save_fig_bool = True,
+        filepath = Constants.PLOT_FOLDER_PATH,
+        filename = "bf_hashes.png"
+    )
     bf = BloomFilter(
         log_filepath=Constants.LOG_FOLDER_PATH,
         log_filename=Constants.BF_FILENAME,
         bits=bf_bits,
         sentences=grams,
-        opt_k=5
+        opt_k=bf_hashes
         )
     bf_prfp, bf_collisions = bf.simulate_prfp()
     bf_theo_prfp = bf.theo_prfp()
@@ -134,12 +151,13 @@ if __name__ == "__main__":
         y = [[bf_prfp, bf_theo_prfp], [bf_collisions]],
         x = [[pow(2, bit) for bit in bf_bits], [pow(2, bit) for bit in bf_bits]],
         legend_handles=[["Pr[FP]", "Pr[FP] theoretic"], ["Collisions"]],
-        category="Bloom Filter",
+        category=f"Bloom Filter",
         xlabel= ["Memory (bits)", "Memory (bits)"],
         ylabel = ["Pr[FP]", "Collisions found"],
         ax_title = ["Probability of false positive in function of bits", "Collisions found in function of bits"],
         fig_title = "Bloom Filter behaviour in function of memory occupancy",
         save_fig_bool = True,
         filepath = Constants.PLOT_FOLDER_PATH,
-        filename = "bf.png"
+        filename = "bf.png",
+        close_fig_bool=False
     )

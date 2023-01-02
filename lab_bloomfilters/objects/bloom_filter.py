@@ -11,7 +11,7 @@ class BloomFilter():
         log_filename : str,
         bits : List[int],
         sentences : Set[str],
-        opt_k : int
+        opt_k : List[int]
     ):
         self.log_filepath = log_filepath
         self.log_filename = log_filename
@@ -21,6 +21,9 @@ class BloomFilter():
 
     def _initialise_bf(self, range : int) -> np.ndarray:
         return np.zeros(range)
+
+    def _count_theo_inserted_elements(self, hashes : int, bits : int, bloom_filter : np.ndarray) -> int:
+        return - pow(2, bits)/hashes * np.log(1 - np.sum(bloom_filter)/pow(2, bits))
 
     def _build_subsentences(self, modifiers : List[str], sentence : str) -> List[str]:
         sub_sentences = list()
@@ -40,21 +43,22 @@ class BloomFilter():
         else:
             return bloom_filter, False
 
-    def theo_prfp(self) -> List[float]:
+    def theo_prfp(self, hashes : int = 5) -> List[float]:
         theo_prfp = list()
         for bit in self.bits:
-            theo_prfp.append(pow(1-np.exp(-(self.opt_k*len(self.sentences))/(pow(2, bit)-1)), self.opt_k))
+            theo_prfp.append(pow(1-np.exp(-(hashes*len(self.sentences))/(pow(2, bit)-1)), hashes))
         return theo_prfp
 
     def simulate_prfp(self) -> Tuple[List[float], List[float]]:
         prfp = list()
         collisions_list = list()
-        modifiers = [str(rnd) for rnd in range(self.opt_k)]
-        for bit in self.bits:
+        for bit, k in zip(self.bits, self.opt_k):
+            modifiers = [str(rnd) for rnd in range(k)]
             dimension = pow(2, bit)
-            print(f"\tStoring fingerprints using 2^{bit}={dimension} bits")
+            print(f"\tStoring fingerprints using 2^{bit}={dimension} bits. Hash functions: {k}")
             bf = self._initialise_bf(range=dimension)
             collisions = 0
+            added_elements = 0
             for sentence in self.sentences:
                 hashed_sentence = self._build_subsentences(modifiers=modifiers, sentence=sentence)
                 indexes = list()
@@ -64,8 +68,12 @@ class BloomFilter():
                 bf, conflict_found = self._add_element_and_check_for_conflicts(bloom_filter=bf, indexes=indexes)
                 if conflict_found:
                     collisions += 1
+                else:
+                    added_elements += 1
             collisions_list.append(collisions)
-            print(f"\t\tFound {collisions} collisions")
             prfp.append(collisions/dimension)
+            print(f"\t\tFound {collisions} collisions")
+            print(f"\t\tInserted {added_elements} elements without any conflict.")
+            print(f"\t\tTheory allows {self._count_theo_inserted_elements(hashes=k, bloom_filter=bf, bits=bit)} to be inserted.")
         
         return prfp, collisions_list

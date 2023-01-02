@@ -47,24 +47,37 @@ class Helper:
         fig_title : str,
         save_fig_bool : bool,
         filepath : str,
-        filename : str
+        filename : str,
+        close_fig_bool : bool = True
     ) -> None:
         assert len(x) == len(y), "Size mismatch in input."
         num_plots = len(y)
-        fig, axs = plt.subplots(1, num_plots, figsize=(6*num_plots, 5))
-        fig.suptitle(fig_title)
-        for x_el, y_el, legend_handle, xlabel_el, ylabel_el, title_el, idx in zip(x, y, legend_handles, xlabel, ylabel, ax_title, range(num_plots)):
-            axs[idx].grid()
-            for sub_y, sub_handle in zip(y_el, legend_handle):
-                axs[idx].plot(x_el, sub_y, label=sub_handle)
-                axs[idx].set_xlabel(xlabel_el)
-                axs[idx].set_ylabel(ylabel_el)
-                axs[idx].set_title(title_el)
-                axs[idx].legend()
+        if num_plots > 1:
+            fig, axs = plt.subplots(1, num_plots, figsize=(6*num_plots, 5))
+            fig.suptitle(fig_title)
+            for x_el, y_el, legend_handle, xlabel_el, ylabel_el, title_el, idx in zip(x, y, legend_handles, xlabel, ylabel, ax_title, range(num_plots)):
+                axs[idx].grid()
+                for sub_y, sub_handle in zip(y_el, legend_handle):
+                    axs[idx].plot(x_el, sub_y, linestyle="--", marker='o', label=sub_handle)
+                    axs[idx].set_xlabel(xlabel_el)
+                    axs[idx].set_ylabel(ylabel_el)
+                    axs[idx].set_title(title_el)
+                    axs[idx].legend()
+        else:
+            fig, ax = plt.subplots(figsize=(6, 5))
+            fig.suptitle(fig_title)
+            ax.plot(x[0], y[0][0], linestyle="--", marker='o', label=legend_handles[0][0])
+            ax.grid()
+            ax.set_xlabel(xlabel[0])
+            ax.set_ylabel(ylabel[0])
+            ax.set_title(ax_title[0])
+            ax.legend()
 
         if save_fig_bool:
             print(f"Saving picture with informations about {category} in {os.path.join(filepath, filename)}")
             plt.savefig(os.path.join(filepath, filename))
+            if close_fig_bool:
+                plt.close()
 
     @staticmethod
     def log_json(filename : str, filepath : str, json_obj : Dict[int, float] = None) -> bool:
