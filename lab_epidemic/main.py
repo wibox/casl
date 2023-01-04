@@ -11,7 +11,8 @@ if __name__ == "__main__":
         extinction_rate=.2,
         ancestors_horizon=10,
         time_horizon=100,
-        starting_time=0
+        starting_time=0,
+        simulate_interventions=False
     )
 
     hp.simulate_process()

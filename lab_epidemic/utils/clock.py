@@ -1,7 +1,7 @@
 class Clock():
     def __init__(
         self,
-        starting_time : int,
+        starting_time : float,
     ):
         self.starting_time = starting_time
         self.current_time = self.starting_time

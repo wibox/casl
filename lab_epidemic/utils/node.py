@@ -1,27 +1,39 @@
+import numpy as np
+from json import JSONEncoder
+from typing import *
+
+class NodeEncoder(JSONEncoder):
+    def default(self, o: Any) -> Any:
+        return o.__dict__
+
 class Node():
     def __init__(
         self,
-        idx : int,
         infection_time : float,
-        generation : int
+        generation : int,
+        is_alive : bool
     ):
-        self.idx = idx
         self.infection_time = infection_time
         self.generation = generation
+        self.is_alive = is_alive
+
+    def infect(self, poisson_param : float):
+        y_v = np.random.poisson(lam = poisson_param)
+        return y_v
 
     def __str__(self) -> str:
         return f"Node: {self.idx}\nGeneration: {self.generation}\nInfection time: {self.infection_time}"
 
-class AncestorNode(Node):
+class AncestorNode(Node, JSONEncoder):
     def __init__(
         self,
-        idx : int,
-        infection_time : float
+        infection_time : float,
+        is_alive : bool = True
     ):
         super().__init__(
-            idx=idx,
             infection_time=infection_time,
-            generation=0
+            generation=0,
+            is_alive=is_alive
             )
 
     def __str__(self) -> str:
