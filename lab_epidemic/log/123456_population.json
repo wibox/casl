@@ -1,0 +1,3149 @@
+{
+    "infections": {
+        "ancestor0": {
+            "0": [
+                "{\"infection_time\": 0.006789258411382547, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.653077707380406, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.653077707380406, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.653077707380406, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 16.543586037318136, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.543586037318136, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 35.49474277919933, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 72.19848504824952, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 72.19848504824952, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 72.19848504824952, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 72.19848504824952, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor1": {
+            "0": [
+                "{\"infection_time\": 0.17692594419534302, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 6.585899416452277, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.585899416452277, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.585899416452277, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.585899416452277, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 20.720414141835068, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 20.720414141835068, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 20.720414141835068, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 20.720414141835068, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 37.416917797360796, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 37.416917797360796, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 78.39974858079736, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 78.39974858079736, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 78.39974858079736, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor2": {
+            "0": [
+                "{\"infection_time\": 0.1920133717417778, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 1.0840744765312211, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 21.254663872869145, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 21.254663872869145, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 34.5692291804555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.5692291804555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.5692291804555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.5692291804555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.5692291804555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.5692291804555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.5692291804555, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 57.67538082332631, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 57.67538082332631, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 57.67538082332631, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 57.67538082332631, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 57.67538082332631, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor3": {
+            "0": [
+                "{\"infection_time\": 0.3057796359652106, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 4.3647475232813155, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.3647475232813155, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.3647475232813155, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.3647475232813155, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.3647475232813155, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 20.325778830786074, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 20.325778830786074, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 34.94353002506728, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.94353002506728, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.94353002506728, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 67.09059960535329, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor4": {
+            "0": [
+                "{\"infection_time\": 0.32941999102556097, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 2.7131744078110938, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 2.7131744078110938, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 2.7131744078110938, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 2.7131744078110938, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 18.318127629022968, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor5": {
+            "0": [
+                "{\"infection_time\": 0.3499103479051168, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.932442565106358, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 33.171417600752704, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 58.386463217315814, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor6": {
+            "0": [
+                "{\"infection_time\": 0.3799274884686017, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.90875117602303, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.90875117602303, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 16.164421862565252, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.164421862565252, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor7": {
+            "0": [
+                "{\"infection_time\": 0.471636338785267, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.16302788939475, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.16302788939475, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor8": {
+            "0": [
+                "{\"infection_time\": 0.4782045769605389, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 4.346856810721051, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.346856810721051, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 6.854507776803701, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 21.361172545662647, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 21.361172545662647, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 21.361172545662647, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor9": {
+            "0": [
+                "{\"infection_time\": 0.5173610381918735, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.339422973007059, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.339422973007059, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.339422973007059, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.091166393376987, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.091166393376987, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.091166393376987, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 45.92012454777797, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 45.92012454777797, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 45.92012454777797, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 92.39721487759078, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 92.39721487759078, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor10": {
+            "0": [
+                "{\"infection_time\": 0.5407024500168794, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor11": {
+            "0": [
+                "{\"infection_time\": 0.570412524033932, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 18.47685168454573, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.87146470852466, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.87146470852466, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.87146470852466, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.87146470852466, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 65.41884911626025, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 65.41884911626025, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor12": {
+            "0": [
+                "{\"infection_time\": 0.5773434928852695, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 1.8788673056348726, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 1.8788673056348726, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 17.211406588337407, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.211406588337407, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 24.47513930383891, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 24.47513930383891, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 61.65490319859691, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 61.65490319859691, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor13": {
+            "0": [
+                "{\"infection_time\": 0.6756058353799228, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 0.805105611606854, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 0.805105611606854, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 17.034430137411256, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.034430137411256, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 37.63186287306465, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 65.24357233047508, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor14": {
+            "0": [
+                "{\"infection_time\": 0.761453751974527, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 9.466537456968231, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 9.466537456968231, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 9.466537456968231, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 9.466537456968231, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 24.56442080022435, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 24.56442080022435, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 24.56442080022435, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 44.696872867824666, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 44.696872867824666, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 94.45146068797858, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor15": {
+            "0": [
+                "{\"infection_time\": 0.7831511123837906, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 3.9761366814251664, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 3.9761366814251664, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 19.00789034815311, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 33.01680621824656, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 33.01680621824656, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 74.29379875944879, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor16": {
+            "0": [
+                "{\"infection_time\": 0.7961471497790548, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 15.298939673779328, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.298939673779328, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 17.747923968147784, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.747923968147784, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.747923968147784, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 50.53594428869033, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.53594428869033, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.53594428869033, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor17": {
+            "0": [
+                "{\"infection_time\": 0.8711278622160632, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 6.485544333725562, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.485544333725562, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 14.682165506100526, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 14.682165506100526, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 14.682165506100526, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 41.54808850714187, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 41.54808850714187, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 65.01373721043761, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 65.01373721043761, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor18": {
+            "0": [
+                "{\"infection_time\": 0.9162945625979523, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.588031908371809, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.588031908371809, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor19": {
+            "0": [
+                "{\"infection_time\": 0.9236936739264863, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.026715735180595, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.026715735180595, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.026715735180595, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 36.34726130668486, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 36.34726130668486, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 57.439331672692404, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 57.439331672692404, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor20": {
+            "0": [
+                "{\"infection_time\": 1.0195257320387399, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 3.9666901734730464, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 3.9666901734730464, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor21": {
+            "0": [
+                "{\"infection_time\": 1.0329528838284987, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor22": {
+            "0": [
+                "{\"infection_time\": 1.0408573938746575, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor23": {
+            "0": [
+                "{\"infection_time\": 1.085421299108921, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor24": {
+            "0": [
+                "{\"infection_time\": 1.1280884777997364, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor25": {
+            "0": [
+                "{\"infection_time\": 1.1312498448483066, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 3.8804967955809158, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 3.8804967955809158, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 3.8804967955809158, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.120072676306464, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.120072676306464, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.120072676306464, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.120072676306464, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.120072676306464, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.120072676306464, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.120072676306464, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 34.29859139750939, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 74.73856964937193, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 74.73856964937193, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 74.73856964937193, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor26": {
+            "0": [
+                "{\"infection_time\": 1.175881729446849, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor27": {
+            "0": [
+                "{\"infection_time\": 1.1899567781354625, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 17.927443360118367, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.927443360118367, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.927443360118367, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 23.559801845064015, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 23.559801845064015, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 23.559801845064015, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 56.6361484494714, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 56.6361484494714, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 56.6361484494714, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 110.97590765248229, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor28": {
+            "0": [
+                "{\"infection_time\": 1.210766269081947, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 16.166055983964686, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 30.280868348546917, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 67.3087768734097, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 67.3087768734097, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 67.3087768734097, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 67.3087768734097, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor29": {
+            "0": [
+                "{\"infection_time\": 1.4198553996649548, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.678816616484902, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.678816616484902, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 10.51480024724831, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 10.51480024724831, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 32.47707441013915, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 32.47707441013915, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 32.47707441013915, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor30": {
+            "0": [
+                "{\"infection_time\": 1.5458554069286077, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.019589932088877, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 27.19942950292562, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 27.19942950292562, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 27.19942950292562, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 27.19942950292562, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor31": {
+            "0": [
+                "{\"infection_time\": 1.5477805831994798, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 6.023203615482519, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 25.9579986876574, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 47.09838866897333, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.09838866897333, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.09838866897333, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.09838866897333, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.09838866897333, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.09838866897333, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 84.08123695054095, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 84.08123695054095, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 84.08123695054095, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 84.08123695054095, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor32": {
+            "0": [
+                "{\"infection_time\": 1.646642628153139, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 4.437148385419423, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.437148385419423, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 18.28683326520108, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 18.28683326520108, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 24.95867231098876, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 24.95867231098876, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 67.95572281509979, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 67.95572281509979, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 67.95572281509979, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 67.95572281509979, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 67.95572281509979, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 67.95572281509979, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor33": {
+            "0": [
+                "{\"infection_time\": 1.7166762589497035, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 15.251373445514542, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.251373445514542, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.251373445514542, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.251373445514542, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.251373445514542, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 34.34963636008998, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.34963636008998, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.34963636008998, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.34963636008998, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 58.14274502196449, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 58.14274502196449, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor34": {
+            "0": [
+                "{\"infection_time\": 1.7426509763087414, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.456324017395563, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.456324017395563, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.75752744253428, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 66.83903750613698, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 66.83903750613698, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor35": {
+            "0": [
+                "{\"infection_time\": 1.7636945763085135, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 5.17953333759286, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 5.17953333759286, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 13.782398225509034, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 29.161340536592277, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 54.865654060018635, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 54.865654060018635, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor36": {
+            "0": [
+                "{\"infection_time\": 1.7730663370973343, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 18.13716586621439, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.13716586621439, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.13716586621439, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.13716586621439, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.132792476480724, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.132792476480724, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor37": {
+            "0": [
+                "{\"infection_time\": 1.7981645050722403, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.87231215752489, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor38": {
+            "0": [
+                "{\"infection_time\": 1.849479017162764, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.491947602619387, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 24.329922602335145, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 50.04480285490438, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.04480285490438, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.04480285490438, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 97.2445142073916, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 97.2445142073916, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor39": {
+            "0": [
+                "{\"infection_time\": 1.865530098031246, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.934945965608303, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.934945965608303, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.934945965608303, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 25.93073593744645, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.93073593744645, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.93073593744645, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 53.33727061758175, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 53.33727061758175, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 53.33727061758175, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor40": {
+            "0": [
+                "{\"infection_time\": 1.896557875517974, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.025212948031616, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.025212948031616, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 38.4056753656253, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 77.7646278228965, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 77.7646278228965, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 77.7646278228965, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 77.7646278228965, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor41": {
+            "0": [
+                "{\"infection_time\": 1.9990992789674262, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 2.0900590852736185, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 2.0900590852736185, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor42": {
+            "0": [
+                "{\"infection_time\": 2.0247349176203433, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.145539059991847, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.145539059991847, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.145539059991847, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.145539059991847, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.145539059991847, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 35.4405061948341, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 35.4405061948341, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor43": {
+            "0": [
+                "{\"infection_time\": 2.071890820797547, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor44": {
+            "0": [
+                "{\"infection_time\": 2.0781671185824595, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.54278679226094, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.54278679226094, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 27.494207780702904, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 27.494207780702904, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 27.494207780702904, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 27.494207780702904, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 54.26975976403447, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.26975976403447, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor45": {
+            "0": [
+                "{\"infection_time\": 2.1387311508292077, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 5.582972343590263, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 5.582972343590263, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 5.582972343590263, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 17.052138431631725, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.052138431631725, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 43.28574282734964, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 43.28574282734964, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 87.60929894602441, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor46": {
+            "0": [
+                "{\"infection_time\": 2.165455797789644, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 16.260418118206317, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 21.8551831135548, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 58.63153895916213, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 116.9476961667795, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 116.9476961667795, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor47": {
+            "0": [
+                "{\"infection_time\": 2.186409554035006, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 4.49394842568614, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.49394842568614, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 16.542275059958108, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 34.52560164820237, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.52560164820237, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 76.47361571119393, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 76.47361571119393, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor48": {
+            "0": [
+                "{\"infection_time\": 2.2317173325075443, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.062753798309492, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.062753798309492, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 21.805159196223826, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 21.805159196223826, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 21.805159196223826, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor49": {
+            "0": [
+                "{\"infection_time\": 2.2428660272382928, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 6.659925128084023, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.659925128084023, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.659925128084023, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.659925128084023, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 28.339681382884798, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 44.817463585368756, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 44.817463585368756, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 44.817463585368756, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 89.18594051422002, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 89.18594051422002, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor50": {
+            "0": [
+                "{\"infection_time\": 2.2481194308594916, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor51": {
+            "0": [
+                "{\"infection_time\": 2.3144445769498314, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.292998749542113, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.292998749542113, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.52503663495522, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.52503663495522, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.52503663495522, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 52.559811348866106, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor52": {
+            "0": [
+                "{\"infection_time\": 2.315278721907669, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.874855025192847, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.72561354703623, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 61.15312259886855, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor53": {
+            "0": [
+                "{\"infection_time\": 2.3481083478581577, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.001228581596248, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.410541832846974, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.410541832846974, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.410541832846974, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.410541832846974, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.410541832846974, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor54": {
+            "0": [
+                "{\"infection_time\": 2.353151263037356, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 6.879321870342203, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 24.744463717724386, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 24.744463717724386, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 24.744463717724386, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 47.14846126942678, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 90.8098150882754, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor55": {
+            "0": [
+                "{\"infection_time\": 2.3875399783151554, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 17.174379705453276, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.174379705453276, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.48045840546631, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.48045840546631, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.48045840546631, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 68.36974571748686, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 68.36974571748686, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 68.36974571748686, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 68.36974571748686, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor56": {
+            "0": [
+                "{\"infection_time\": 2.478794294972631, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.959032816345496, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.959032816345496, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 30.271827844024465, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 51.865147631392915, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor57": {
+            "0": [
+                "{\"infection_time\": 2.5926076472233794, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor58": {
+            "0": [
+                "{\"infection_time\": 2.658556542226947, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 6.47664212722956, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.47664212722956, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.47664212722956, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 6.47664212722956, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 9.655936409528275, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 28.31191659032877, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 63.408437387409755, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor59": {
+            "0": [
+                "{\"infection_time\": 2.729647306289556, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.888121546343069, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.21314556720116, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 39.17059781823814, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 82.35316926819632, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 82.35316926819632, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor60": {
+            "0": [
+                "{\"infection_time\": 2.770771069591657, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.301461921732908, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.301461921732908, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.301461921732908, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 17.586672403749116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.586672403749116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.586672403749116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.586672403749116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.586672403749116, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 17.586672403749116, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 36.78383892001851, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 80.67869830753109, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 80.67869830753109, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor61": {
+            "0": [
+                "{\"infection_time\": 2.8026546050836356, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.786905260920133, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.786905260920133, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.786905260920133, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 12.577415777981331, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 12.577415777981331, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 35.3271390133157, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 35.3271390133157, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 70.41053470664644, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 70.41053470664644, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 70.41053470664644, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor62": {
+            "0": [
+                "{\"infection_time\": 2.81012417975801, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 4.662722521482739, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.662722521482739, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.735808422130912, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.735808422130912, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.735808422130912, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.735808422130912, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 47.94031697135745, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor63": {
+            "0": [
+                "{\"infection_time\": 2.8150854337419613, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.98439877466526, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.984262247458936, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.984262247458936, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.984262247458936, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor64": {
+            "0": [
+                "{\"infection_time\": 2.9576725185212545, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor65": {
+            "0": [
+                "{\"infection_time\": 2.9648717671194538, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.953952125589536, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.953952125589536, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.953952125589536, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.953952125589536, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 12.34607404910076, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 12.34607404910076, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 28.775214207764943, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 65.19866323502927, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 65.19866323502927, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 65.19866323502927, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor66": {
+            "0": [
+                "{\"infection_time\": 3.0146790044141047, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.26948701125621, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 34.885301568495805, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.885301568495805, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 69.49407304495753, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 69.49407304495753, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 69.49407304495753, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor67": {
+            "0": [
+                "{\"infection_time\": 3.065701632947324, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.105108244640338, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.105108244640338, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.47059640560653, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.47059640560653, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 56.87194993380764, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 56.87194993380764, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor68": {
+            "0": [
+                "{\"infection_time\": 3.094114641317792, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 17.574052888947815, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.574052888947815, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.574052888947815, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 25.952346308280845, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 51.066600834779166, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 51.066600834779166, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 51.066600834779166, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 106.00894029199644, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 106.00894029199644, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor69": {
+            "0": [
+                "{\"infection_time\": 3.1025857209499197, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.47426827431717, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.47426827431717, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor70": {
+            "0": [
+                "{\"infection_time\": 3.2018319348621382, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 3.592457312402142, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 21.774771905865013, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 33.09713607826856, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 33.09713607826856, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 61.730672980879135, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 61.730672980879135, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 61.730672980879135, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor71": {
+            "0": [
+                "{\"infection_time\": 3.259281913614317, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor72": {
+            "0": [
+                "{\"infection_time\": 3.2637622268858464, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 17.48086604066063, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.48086604066063, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.48086604066063, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.48086604066063, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 38.716505386682115, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.716505386682115, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor73": {
+            "0": [
+                "{\"infection_time\": 3.3055095772370735, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.235041662108442, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.235041662108442, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 16.85261240853611, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.85261240853611, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 31.31462935651396, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 70.30455991224957, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor74": {
+            "0": [
+                "{\"infection_time\": 3.3136252220563307, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.538093899690352, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.538093899690352, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.538093899690352, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 12.307275947486236, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 39.45987602143268, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 39.45987602143268, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 64.66167117734392, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 64.66167117734392, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor75": {
+            "0": [
+                "{\"infection_time\": 3.346077377761019, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor76": {
+            "0": [
+                "{\"infection_time\": 3.440580712093114, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 15.414545420629974, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.414545420629974, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.414545420629974, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 28.109766597879034, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 28.109766597879034, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 50.31326875192669, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.31326875192669, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 112.36765116424367, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 112.36765116424367, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor77": {
+            "0": [
+                "{\"infection_time\": 3.448130253810469, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 9.988350898278753, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 26.084715497865577, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 54.11694140126738, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.11694140126738, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor78": {
+            "0": [
+                "{\"infection_time\": 3.468120622093328, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 21.882050922056333, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 21.882050922056333, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor79": {
+            "0": [
+                "{\"infection_time\": 3.518386844690113, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor80": {
+            "0": [
+                "{\"infection_time\": 3.5666843356244597, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor81": {
+            "0": [
+                "{\"infection_time\": 3.5918142005333977, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.359620330266866, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.359620330266866, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.359620330266866, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.359620330266866, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 19.26858410637357, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 36.210621878429194, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 36.210621878429194, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 36.210621878429194, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 36.210621878429194, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 79.33333207348994, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 79.33333207348994, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 79.33333207348994, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor82": {
+            "0": [
+                "{\"infection_time\": 3.6476119634457715, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor83": {
+            "0": [
+                "{\"infection_time\": 3.7306433451845695, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 3.7771628551671794, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 3.7771628551671794, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 3.7771628551671794, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 3.7771628551671794, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 10.598273219700635, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 10.598273219700635, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 34.197340632574395, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.197340632574395, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 34.197340632574395, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 64.00558963536244, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor84": {
+            "0": [
+                "{\"infection_time\": 3.7551127853224133, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.625993219704313, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.625993219704313, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.625993219704313, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 18.879433479343916, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 18.879433479343916, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 18.879433479343916, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 47.36827018828369, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.36827018828369, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.36827018828369, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.36827018828369, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor85": {
+            "0": [
+                "{\"infection_time\": 3.7944591740419087, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor86": {
+            "0": [
+                "{\"infection_time\": 4.019722528009672, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.773235089564093, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.629908653711453, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.629908653711453, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.629908653711453, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor87": {
+            "0": [
+                "{\"infection_time\": 4.2296508375293715, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor88": {
+            "0": [
+                "{\"infection_time\": 4.252782920636661, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.80349363054426, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.80349363054426, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.80349363054426, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.80349363054426, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 25.24980377335661, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.24980377335661, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.24980377335661, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.24980377335661, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.24980377335661, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 42.93503313546208, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 42.93503313546208, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 42.93503313546208, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor89": {
+            "0": [
+                "{\"infection_time\": 4.294167381314525, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.974057293779364, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.974057293779364, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.4865680000779, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 55.43537494244735, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 55.43537494244735, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 55.43537494244735, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 55.43537494244735, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor90": {
+            "0": [
+                "{\"infection_time\": 4.308536294046593, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 9.32438276959576, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.289330405037397, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 46.339180909127585, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 91.3352053935267, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 91.3352053935267, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 91.3352053935267, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor91": {
+            "0": [
+                "{\"infection_time\": 4.495970680962528, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.412718019742595, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 33.51828804631898, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 53.44507722398701, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 53.44507722398701, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor92": {
+            "0": [
+                "{\"infection_time\": 4.580760135628039, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.45625606173056, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.45625606173056, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 38.88498697245625, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.88498697245625, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.88498697245625, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor93": {
+            "0": [
+                "{\"infection_time\": 4.5830282306004015, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.146607355135053, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.146607355135053, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.146607355135053, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.146607355135053, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 37.450256483898755, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 37.450256483898755, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 37.450256483898755, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 67.396023018551, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 67.396023018551, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 67.396023018551, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor94": {
+            "0": [
+                "{\"infection_time\": 4.609395704934099, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 21.760833852535885, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 21.760833852535885, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 28.537662754887403, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 55.43351408138741, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor95": {
+            "0": [
+                "{\"infection_time\": 4.610912821772294, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 9.39328242208568, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 9.39328242208568, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 9.39328242208568, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 9.39328242208568, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 30.97910561507475, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.97910561507475, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.97910561507475, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.97910561507475, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 46.38053268322397, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 46.38053268322397, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 46.38053268322397, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 105.44855255264761, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor96": {
+            "0": [
+                "{\"infection_time\": 4.62256623517614, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 4.765832014439313, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 4.765832014439313, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 11.6613843961611, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 11.6613843961611, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 32.676467593205814, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 32.676467593205814, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 32.676467593205814, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 32.676467593205814, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 32.676467593205814, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor97": {
+            "0": [
+                "{\"infection_time\": 4.6723869318652325, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 18.925627338211537, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.925627338211537, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.925627338211537, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.925627338211537, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.925627338211537, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.925627338211537, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 43.359436035287025, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 86.75559339437889, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 86.75559339437889, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor98": {
+            "0": [
+                "{\"infection_time\": 4.725931666135086, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 9.123714321861874, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 16.629868406543537, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.629868406543537, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.629868406543537, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.629868406543537, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 49.98448401681658, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 86.44946872052466, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 86.44946872052466, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor99": {
+            "0": [
+                "{\"infection_time\": 4.740270191523981, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.45498331409847, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.45498331409847, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 33.00075149138952, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor100": {
+            "0": [
+                "{\"infection_time\": 4.989255976226935, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 24.92206030509065, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.92206030509065, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 46.78228563149817, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 46.78228563149817, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 82.44931986787077, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 82.44931986787077, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 82.44931986787077, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor101": {
+            "0": [
+                "{\"infection_time\": 4.990827415201016, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.562407854000444, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.562407854000444, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.562407854000444, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor102": {
+            "0": [
+                "{\"infection_time\": 5.012869085772627, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.265900354277582, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.265900354277582, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.265900354277582, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 30.747722993378474, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.747722993378474, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.747722993378474, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.747722993378474, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 67.50684504723557, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 67.50684504723557, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 67.50684504723557, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor103": {
+            "0": [
+                "{\"infection_time\": 5.027076498683405, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 24.75607019892329, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.75607019892329, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 37.174622373188235, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 37.174622373188235, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 37.174622373188235, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor104": {
+            "0": [
+                "{\"infection_time\": 5.0374842040592185, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.624352527349947, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 18.35168703639908, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 39.41015815723737, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 39.41015815723737, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 39.41015815723737, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 39.41015815723737, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 79.23559140300847, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 79.23559140300847, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 79.23559140300847, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor105": {
+            "0": [
+                "{\"infection_time\": 5.043493034554109, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 6.671763361068301, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor106": {
+            "0": [
+                "{\"infection_time\": 5.102000688100514, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 22.928581346885363, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 22.928581346885363, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 22.928581346885363, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 22.928581346885363, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 30.8913780141197, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.8913780141197, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 64.59010768206934, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 64.59010768206934, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor107": {
+            "0": [
+                "{\"infection_time\": 5.210662622318882, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.231679437390811, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.231679437390811, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.09693955493121, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.09693955493121, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 58.52779195229591, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 58.52779195229591, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor108": {
+            "0": [
+                "{\"infection_time\": 5.227033999732729, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.062259165732181, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.062259165732181, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 28.81548067578774, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor109": {
+            "0": [
+                "{\"infection_time\": 5.28572697640365, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 23.287987631672145, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 23.287987631672145, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 42.80014937390563, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 42.80014937390563, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 42.80014937390563, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 82.68765466323183, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 82.68765466323183, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 82.68765466323183, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor110": {
+            "0": [
+                "{\"infection_time\": 5.332302501344164, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.563882753592138, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.563882753592138, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 24.203022616784555, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 24.203022616784555, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 24.203022616784555, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 24.203022616784555, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 42.74970191251771, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 84.60531469916727, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 84.60531469916727, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor111": {
+            "0": [
+                "{\"infection_time\": 5.335448119346801, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.5544971852833545, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.5544971852833545, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.5544971852833545, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.5544971852833545, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.5544971852833545, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 16.875430191692963, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.875430191692963, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 31.515678598686637, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 80.95105084385821, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 80.95105084385821, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 80.95105084385821, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 80.95105084385821, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor112": {
+            "0": [
+                "{\"infection_time\": 5.344679932308516, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 24.509461014471626, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.509461014471626, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.509461014471626, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.509461014471626, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.509461014471626, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 46.26490629904373, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 46.26490629904373, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 46.26490629904373, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 46.26490629904373, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 85.23151998749736, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor113": {
+            "0": [
+                "{\"infection_time\": 5.466955372499425, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 24.55936071775555, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.55936071775555, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.55936071775555, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.55936071775555, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.55936071775555, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 42.10665639216983, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 42.10665639216983, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 42.10665639216983, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 81.45331829192705, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor114": {
+            "0": [
+                "{\"infection_time\": 5.539566156269232, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor115": {
+            "0": [
+                "{\"infection_time\": 5.551784764917676, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.173672077955878, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.173672077955878, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.173672077955878, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.173672077955878, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 21.774879078413495, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 21.774879078413495, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 53.032132887185696, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 53.032132887185696, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 53.032132887185696, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor116": {
+            "0": [
+                "{\"infection_time\": 5.689554598615825, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.706485293432785, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.706485293432785, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.706485293432785, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.706485293432785, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 19.87183241526187, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 41.7579245815751, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 84.83420844112536, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 84.83420844112536, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 84.83420844112536, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor117": {
+            "0": [
+                "{\"infection_time\": 5.748263685696574, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.914486592798884, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 29.287753145928956, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 29.287753145928956, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 29.287753145928956, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 58.1829616544935, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 58.1829616544935, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 58.1829616544935, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor118": {
+            "0": [
+                "{\"infection_time\": 5.8827813487146905, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor119": {
+            "0": [
+                "{\"infection_time\": 5.89906779380111, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor120": {
+            "0": [
+                "{\"infection_time\": 5.900216094390839, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 22.26220607619762, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 22.26220607619762, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 22.26220607619762, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 22.26220607619762, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 34.93696843740136, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.93696843740136, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.93696843740136, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.93696843740136, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 74.23981529181883, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor121": {
+            "0": [
+                "{\"infection_time\": 6.027425974718997, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.083911878857716, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.083911878857716, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 25.839994447846244, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.839994447846244, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.839994447846244, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.839994447846244, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 54.04666198975726, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.04666198975726, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor122": {
+            "0": [
+                "{\"infection_time\": 6.057251279868563, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor123": {
+            "0": [
+                "{\"infection_time\": 6.084424634148479, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 22.736146607877302, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 22.736146607877302, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 43.07467908997195, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 43.07467908997195, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 43.07467908997195, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 80.53763328308801, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor124": {
+            "0": [
+                "{\"infection_time\": 6.14385514895463, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 24.015325458197616, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.015325458197616, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.015325458197616, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.015325458197616, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor125": {
+            "0": [
+                "{\"infection_time\": 6.167160296773092, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.269214501391009, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.269214501391009, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.269214501391009, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.269214501391009, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.269214501391009, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 27.675337241724122, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 47.36763094598719, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.36763094598719, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 47.36763094598719, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 105.49058324711461, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 105.49058324711461, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor126": {
+            "0": [
+                "{\"infection_time\": 6.194011425389252, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.8045279179762765, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.8045279179762765, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.8045279179762765, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.8045279179762765, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 26.205041338157557, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 45.08275449423651, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 45.08275449423651, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor127": {
+            "0": [
+                "{\"infection_time\": 6.213429390871699, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.683772997262459, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.683772997262459, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.683772997262459, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 36.07645776852927, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 36.07645776852927, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor128": {
+            "0": [
+                "{\"infection_time\": 6.29511179358568, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.583334125984226, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.583334125984226, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.583334125984226, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.9271958633925, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 57.25616440529845, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor129": {
+            "0": [
+                "{\"infection_time\": 6.322340334490748, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.143934262932941, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 23.799529277853566, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 23.799529277853566, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 51.51918056687133, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 51.51918056687133, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 51.51918056687133, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor130": {
+            "0": [
+                "{\"infection_time\": 6.3991075703869065, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 9.633746655289348, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.62417552794627, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 50.605362538137975, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.605362538137975, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.605362538137975, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 105.19445628157946, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 105.19445628157946, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 105.19445628157946, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor131": {
+            "0": [
+                "{\"infection_time\": 6.458872835805888, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 18.646288298972692, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.646288298972692, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 39.706549582806026, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 39.706549582806026, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 39.706549582806026, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 68.98181813327864, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor132": {
+            "0": [
+                "{\"infection_time\": 6.493604029687138, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.39813685784846, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.39813685784846, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 34.755031164585375, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 65.81779949231806, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 65.81779949231806, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor133": {
+            "0": [
+                "{\"infection_time\": 6.5418404452117445, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.08029825236721, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.08029825236721, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.08029825236721, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.647089527407182, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.647089527407182, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor134": {
+            "0": [
+                "{\"infection_time\": 6.576224473191938, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.731882784646118, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.731882784646118, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 39.18809294669397, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 39.18809294669397, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 60.691073129195715, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 60.691073129195715, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 60.691073129195715, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor135": {
+            "0": [
+                "{\"infection_time\": 6.613868073975032, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.26469117479287, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.26469117479287, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.538940862451035, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.538940862451035, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.538940862451035, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 54.675106336238585, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.675106336238585, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor136": {
+            "0": [
+                "{\"infection_time\": 6.687393504396317, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 17.188421791221735, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.188421791221735, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 34.064615276569725, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.064615276569725, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.064615276569725, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.064615276569725, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 73.18286003306588, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 73.18286003306588, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 73.18286003306588, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor137": {
+            "0": [
+                "{\"infection_time\": 6.688935109064943, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 15.76270834955279, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.76270834955279, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor138": {
+            "0": [
+                "{\"infection_time\": 6.743442791189374, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 25.894067518006782, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 34.878278219404656, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.878278219404656, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.878278219404656, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.878278219404656, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor139": {
+            "0": [
+                "{\"infection_time\": 6.759452305180907, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 24.994976897329902, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.994976897329902, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.994976897329902, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 50.18620055720648, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 50.18620055720648, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 50.18620055720648, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 50.18620055720648, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor140": {
+            "0": [
+                "{\"infection_time\": 6.786841840103478, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.764181696960964, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.13454837279985, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 52.8351864702257, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 52.8351864702257, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 106.07375391755346, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 106.07375391755346, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor141": {
+            "0": [
+                "{\"infection_time\": 6.788685415380101, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.585431041406764, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.585431041406764, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.585431041406764, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 30.515379164726525, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.515379164726525, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 54.804536322357194, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.804536322357194, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.804536322357194, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.804536322357194, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor142": {
+            "0": [
+                "{\"infection_time\": 6.825923496128059, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.669805585755322, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.65524308576565, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 61.84446232569931, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 61.84446232569931, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 61.84446232569931, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 61.84446232569931, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor143": {
+            "0": [
+                "{\"infection_time\": 6.847899921799903, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.868811370124153, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.868811370124153, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.868811370124153, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.868811370124153, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 19.764270577170823, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 50.3388307503306, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 50.3388307503306, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 107.48597609245336, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 107.48597609245336, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor144": {
+            "0": [
+                "{\"infection_time\": 7.019066857309793, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 22.699824824237965, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 45.03964827550331, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 45.03964827550331, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 45.03964827550331, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 87.26116646834964, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 87.26116646834964, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 87.26116646834964, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 87.26116646834964, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 87.26116646834964, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 87.26116646834964, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 87.26116646834964, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor145": {
+            "0": [
+                "{\"infection_time\": 7.063856141241902, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 21.006456624412596, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 21.006456624412596, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 21.006456624412596, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 35.72712928264306, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 35.72712928264306, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 35.72712928264306, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor146": {
+            "0": [
+                "{\"infection_time\": 7.090957991257562, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.738383284864778, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.738383284864778, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.738383284864778, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 24.335307298101156, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor147": {
+            "0": [
+                "{\"infection_time\": 7.160498840356557, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.267827466984432, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.239727011458676, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.239727011458676, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 48.68244950400555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 48.68244950400555, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 48.68244950400555, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 101.45427087304205, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor148": {
+            "0": [
+                "{\"infection_time\": 7.21847470182837, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 7.715879064181532, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.715879064181532, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.715879064181532, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 7.715879064181532, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 16.972657244365838, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 16.972657244365838, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 45.64885898136022, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 77.92382879752523, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 77.92382879752523, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 77.92382879752523, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor149": {
+            "0": [
+                "{\"infection_time\": 7.33770327145634, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor150": {
+            "0": [
+                "{\"infection_time\": 7.517638954614533, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.336794866228011, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 38.02817366789804, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.02817366789804, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.02817366789804, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.02817366789804, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.02817366789804, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.02817366789804, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 61.5178207755929, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 61.5178207755929, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor151": {
+            "0": [
+                "{\"infection_time\": 7.582417653860658, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.595933560326735, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.595933560326735, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.595933560326735, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 38.49641309531292, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.49641309531292, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.49641309531292, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.49641309531292, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.49641309531292, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 69.68025634409108, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 69.68025634409108, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 69.68025634409108, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor152": {
+            "0": [
+                "{\"infection_time\": 7.609024435560585, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 25.849261437040518, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 51.54317882648959, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 51.54317882648959, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 94.0490279087833, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 94.0490279087833, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 94.0490279087833, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 94.0490279087833, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor153": {
+            "0": [
+                "{\"infection_time\": 7.839298228786958, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 23.41127246909583, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor154": {
+            "0": [
+                "{\"infection_time\": 7.877655165706418, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.431465167941742, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.431465167941742, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.431465167941742, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.431465167941742, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 22.983555413684293, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 22.983555413684293, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor155": {
+            "0": [
+                "{\"infection_time\": 7.918619367596586, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 24.73201608149889, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.73201608149889, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.73201608149889, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.73201608149889, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 24.73201608149889, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 50.47317432838091, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 50.47317432838091, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 50.47317432838091, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 86.16412633084663, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 86.16412633084663, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 86.16412633084663, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 86.16412633084663, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor156": {
+            "0": [
+                "{\"infection_time\": 8.019497089437479, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.324546064647306, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.324546064647306, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.324546064647306, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.324546064647306, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 34.30298696486437, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 34.30298696486437, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor157": {
+            "0": [
+                "{\"infection_time\": 8.020470285814355, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor158": {
+            "0": [
+                "{\"infection_time\": 8.027038202390823, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.70917179009277, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.70917179009277, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 42.53711249897074, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor159": {
+            "0": [
+                "{\"infection_time\": 8.10962940893086, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 15.054928639481869, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.054928639481869, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 33.911194183076695, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 62.776675335990454, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 62.776675335990454, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor160": {
+            "0": [
+                "{\"infection_time\": 8.149326299939325, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.548297690686816, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 38.92639196779868, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.92639196779868, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.92639196779868, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 38.92639196779868, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 68.64421706719222, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 68.64421706719222, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor161": {
+            "0": [
+                "{\"infection_time\": 8.1748845031917, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor162": {
+            "0": [
+                "{\"infection_time\": 8.217709201849653, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.105989117948853, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.105989117948853, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor163": {
+            "0": [
+                "{\"infection_time\": 8.303087062681684, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.632838609112873, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.632838609112873, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.577645591820723, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 62.71190377553929, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 62.71190377553929, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 62.71190377553929, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor164": {
+            "0": [
+                "{\"infection_time\": 8.358525436793357, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.536042879149894, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.536042879149894, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 30.16551085415729, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 30.16551085415729, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 62.23868906866282, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor165": {
+            "0": [
+                "{\"infection_time\": 8.366076708027535, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.439387637787073, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 8.439387637787073, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 25.69595587215328, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.69595587215328, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 51.72685381013077, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 51.72685381013077, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 100.82956869443319, \"generation\": 4, \"is_alive\": true}",
+                "{\"infection_time\": 100.82956869443319, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor166": {
+            "0": [
+                "{\"infection_time\": 8.39980976186817, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.887380849785426, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.887380849785426, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.887380849785426, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.887380849785426, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.440621735223836, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 63.25666001751532, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 63.25666001751532, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 63.25666001751532, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor167": {
+            "0": [
+                "{\"infection_time\": 8.406215533588538, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 22.855296555059766, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 33.66051544202434, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 33.66051544202434, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 33.66051544202434, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 33.66051544202434, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor168": {
+            "0": [
+                "{\"infection_time\": 8.444719148244477, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.033637891003954, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.033637891003954, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.033637891003954, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.033637891003954, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor169": {
+            "0": [
+                "{\"infection_time\": 8.45060024267426, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 16.70482525848288, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 25.946761336438, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.946761336438, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 25.946761336438, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 70.79036912690557, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 70.79036912690557, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 70.79036912690557, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor170": {
+            "0": [
+                "{\"infection_time\": 8.504278961197592, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 16.731827263286153, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 39.25160021464743, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 65.29476551482335, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 65.29476551482335, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 65.29476551482335, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 65.29476551482335, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 65.29476551482335, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor171": {
+            "0": [
+                "{\"infection_time\": 8.557470834265267, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 16.899953137273897, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 16.899953137273897, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor172": {
+            "0": [
+                "{\"infection_time\": 8.569928192548879, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 8.619936110782891, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor173": {
+            "0": [
+                "{\"infection_time\": 8.692086974140146, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.19314340815485, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 14.19314340815485, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.056981659955426, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.056981659955426, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 62.988477339675285, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 62.988477339675285, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 62.988477339675285, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 62.988477339675285, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor174": {
+            "0": [
+                "{\"infection_time\": 8.703533232683633, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 14.680638106537941, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.777966677226054, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 32.777966677226054, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 63.99748705145589, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor175": {
+            "0": [
+                "{\"infection_time\": 8.790305398369824, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 18.856754444295202, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.856754444295202, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.856754444295202, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 18.856754444295202, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor176": {
+            "0": [
+                "{\"infection_time\": 8.820652347104723, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 15.847147992957048, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.847147992957048, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.847147992957048, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.847147992957048, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.847147992957048, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 15.847147992957048, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 39.28904017468268, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 39.28904017468268, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 39.28904017468268, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 79.68844677088173, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor177": {
+            "0": [
+                "{\"infection_time\": 9.018782761923225, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor178": {
+            "0": [
+                "{\"infection_time\": 9.052274582286417, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.142252110935207, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.873331134386888, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.873331134386888, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor179": {
+            "0": [
+                "{\"infection_time\": 9.077476071594315, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 13.982327556088512, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.982327556088512, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 13.982327556088512, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 26.936923056038772, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 26.936923056038772, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 63.83517298342705, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor180": {
+            "0": [
+                "{\"infection_time\": 9.272474889514447, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 20.654349333135926, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.654349333135926, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.654349333135926, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 20.654349333135926, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 41.16753751548643, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 41.16753751548643, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 41.16753751548643, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 90.99051652482176, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor181": {
+            "0": [
+                "{\"infection_time\": 9.322871069742067, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.75310452129281, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.75310452129281, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.75310452129281, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.75310452129281, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.75310452129281, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 37.68585258873267, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 37.68585258873267, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 83.85831633661135, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor182": {
+            "0": [
+                "{\"infection_time\": 9.341571881755447, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor183": {
+            "0": [
+                "{\"infection_time\": 9.404615537578865, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 11.37814658495456, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.37814658495456, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.37814658495456, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 11.37814658495456, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 35.83012610393348, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 56.648078082869425, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 56.648078082869425, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor184": {
+            "0": [
+                "{\"infection_time\": 9.438029298057737, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 16.635532762977817, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 16.635532762977817, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 29.710595863534472, \"generation\": 2, \"is_alive\": true}"
+            ]
+        },
+        "ancestor185": {
+            "0": [
+                "{\"infection_time\": 9.51602978581936, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.592668908032213, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.592668908032213, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 20.336488538609117, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 54.26898717173765, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 54.26898717173765, \"generation\": 3, \"is_alive\": true}"
+            ],
+            "4": [
+                "{\"infection_time\": 95.91140112830277, \"generation\": 4, \"is_alive\": true}"
+            ]
+        },
+        "ancestor186": {
+            "0": [
+                "{\"infection_time\": 9.568238369074347, \"generation\": 0, \"is_alive\": true}"
+            ]
+        },
+        "ancestor187": {
+            "0": [
+                "{\"infection_time\": 9.583101050542457, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 17.074010055154464, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.074010055154464, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 17.074010055154464, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 32.07934663319815, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 65.04797242363519, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 65.04797242363519, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor188": {
+            "0": [
+                "{\"infection_time\": 9.775697178561993, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 17.448853057642474, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 31.856161520654954, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 31.856161520654954, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 60.91857997310186, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 60.91857997310186, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 60.91857997310186, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor189": {
+            "0": [
+                "{\"infection_time\": 9.78811542507888, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 10.98992841296833, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.98992841296833, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 10.98992841296833, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 33.75319756600361, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 68.56750100941753, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 68.56750100941753, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor190": {
+            "0": [
+                "{\"infection_time\": 9.838659467030329, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 19.786686174247325, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 19.786686174247325, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 29.867297765703757, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 78.10818342894578, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 78.10818342894578, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 78.10818342894578, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 78.10818342894578, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 78.10818342894578, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor191": {
+            "0": [
+                "{\"infection_time\": 9.847944155150472, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.86850589623726, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 28.06958817884422, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 28.06958817884422, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 28.06958817884422, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 58.54504315092434, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 58.54504315092434, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 58.54504315092434, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor192": {
+            "0": [
+                "{\"infection_time\": 9.885447053322293, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 25.055659642598904, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 37.1867605557514, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 80.80478634100177, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 80.80478634100177, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 80.80478634100177, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 80.80478634100177, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 80.80478634100177, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor193": {
+            "0": [
+                "{\"infection_time\": 9.932724415299907, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 26.205776975577756, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 45.273150809926065, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 45.273150809926065, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 45.273150809926065, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 45.273150809926065, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 97.28357238787103, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 97.28357238787103, \"generation\": 3, \"is_alive\": true}",
+                "{\"infection_time\": 97.28357238787103, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor194": {
+            "0": [
+                "{\"infection_time\": 9.937321970886293, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 28.4473988693075, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 28.4473988693075, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 28.4473988693075, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 43.59665652385433, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 43.59665652385433, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 90.28300477291054, \"generation\": 3, \"is_alive\": true}"
+            ]
+        },
+        "ancestor195": {
+            "0": [
+                "{\"infection_time\": 9.986045676050235, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 12.299522691997554, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.299522691997554, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 12.299522691997554, \"generation\": 1, \"is_alive\": true}"
+            ]
+        },
+        "ancestor196": {
+            "0": [
+                "{\"infection_time\": 10.044235813369996, \"generation\": 0, \"is_alive\": true}"
+            ],
+            "1": [
+                "{\"infection_time\": 29.37523994800293, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 29.37523994800293, \"generation\": 1, \"is_alive\": true}",
+                "{\"infection_time\": 29.37523994800293, \"generation\": 1, \"is_alive\": true}"
+            ],
+            "2": [
+                "{\"infection_time\": 42.12521036712763, \"generation\": 2, \"is_alive\": true}",
+                "{\"infection_time\": 42.12521036712763, \"generation\": 2, \"is_alive\": true}"
+            ],
+            "3": [
+                "{\"infection_time\": 93.8724689537808, \"generation\": 3, \"is_alive\": true}"
+            ]
+        }
+    }
+}

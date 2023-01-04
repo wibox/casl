@@ -11,13 +11,25 @@ class Logger():
     ):
         self.verbosity=verbosity
 
-    def log_msg(self, msg : str) -> None:
-        if self.verbosity > 0:
+    def log_lp_msg(self, msg : str) -> None:
+        if self.verbosity >= 1:
+            print(msg)
+    
+    def log_hp_msg(self, msg : str) -> None:
+        if self.verbosity >= 0:
+            print(msg)
+    
+    def log_general_msg(self, msg : str) -> None:
+        if self.verbosity == 0:
             print(msg)
 
 class Constants:
     LOG_FOLDER_PATH = "log"
     PLOT_FOLDER_PATH = "plots"
+
+    SEEDS = [247548, 299266, 777, 123456, 124056]
+
+    HAWKES_PROCESS_LOGFILENAME = "population.json"
 
 class Helper:
 
