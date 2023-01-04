@@ -45,8 +45,6 @@ class HawkesProcess():
         self.logger = logger
         self.log_to_file_bool = log_to_file_bool
 
-        self.logger.log_general_msg(msg=f"SEED: {self.seed}")
-
     def _generate_ancestor_time(self) -> float:
         """
         Returns ancestor's "arrival time" according to PPP rate
@@ -183,9 +181,10 @@ class HawkesProcess():
                 illness_extinction_counter += 1
         self.logger.log_hp_msg(msg=f"Times the process terminated for overtime: {extinction_for_overtime_counter}")
         self.logger.log_hp_msg(msg=f"Times the process terminated for illness extinction: {illness_extinction_counter}")
+        self.logger.log_hp_msg(msg=f"Deaths: {global_death_counter}")
         # logging final results into json format is specified to do so
         if self.log_to_file_bool:
-            self.logger.log_general_msg(msg=f"Logging Hawkes process information in {os.path.join(Constants.LOG_FOLDER_PATH, Constants.HAWKES_PROCESS_LOGFILENAME)}")
+            self.logger.log_general_msg(msg=f"Logging Hawkes process information in {os.path.join(Constants.LOG_FOLDER_PATH, f'{self.seed}_{Constants.HAWKES_PROCESS_LOGFILENAME}')}")
             Helper.log_json(
                 filepath=Constants.LOG_FOLDER_PATH,
                 filename=f"{self.seed}_{Constants.HAWKES_PROCESS_LOGFILENAME}",
