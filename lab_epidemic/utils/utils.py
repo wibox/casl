@@ -35,7 +35,7 @@ class Constants:
     LOG_FOLDER_PATH = "log"
     PLOT_FOLDER_PATH = "plots"
 
-    SEEDS = [247548, 299266, 777, 123456, 124056]
+    SEEDS = [247548]#, 299266, 777, 123456, 124056]
     h_t = ['exp', 'uniform']
 
     HAWKES_PROCESS_LOGFILENAME = "population.json"

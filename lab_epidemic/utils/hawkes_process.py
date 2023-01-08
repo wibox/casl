@@ -45,12 +45,25 @@ class HawkesProcess():
         self.logger = logger
         self.log_to_file_bool = log_to_file_bool
 
+        self.seconds_in_a_day = 24*60*60 # total seconds in a day
+
     def _generate_ancestor_time(self) -> float:
         """
         Returns ancestor's "arrival time" according to PPP rate
         """
         return np.random.exponential(1/self.ancestors_rate)
 
+    # def _check_nodes_life(self, nodes : List[Node]) -> Tuple[int, List[Node]]:
+    #     deaths_counter = 0
+    #     for node in nodes:
+    #         u = np.random.uniform(low=0, high=1)
+    #         if u < self.extinction_rate:
+    #             node.is_alive = False
+    #             nodes.remove(node)
+    #             deaths_counter += 1
+
+    #     return deaths_counter, nodes
+        
     def _initialise_hprocess(self) -> Clock:
         """
         Initialises process's clock
@@ -66,7 +79,7 @@ class HawkesProcess():
         elif self.h_t == "exp":
             return np.random.exponential(scale=1/self.l)
 
-    def _generate_hawkes_process(self, ancestor : AncestorNode) -> Tuple[Dict[int, List[Node]], bool, bool, int]:
+    def _generate_hawkes_process(self, ancestor : AncestorNode) -> Tuple[Dict[int, List[Node]], bool, bool, int, int]:
         """
         This function enables the simulation of an Hawkes process.
         Args:
@@ -86,6 +99,7 @@ class HawkesProcess():
         extinction_per_overtime : bool = False # boolean variable used to address time limit
         extinction_of_illness : bool = False # boolean variable used to address illness's spreading
         death_counter : int = 0 # counter to keep track of deaths caused by the illness
+        infection_counter : int = 0 # counter to keep track of the total number of infections transmitted
         curr_time : float = ancestor.infection_time # starting time = ancestor's time
         # adding the first ancestor to total population
         # and global list of nodes for current hawkes process
@@ -95,7 +109,7 @@ class HawkesProcess():
         while curr_time < self.time_horizon:
             self.logger.log_lp_msg(msg=f"Generation: {gen_idx}")
             # updating generation's time throught h_t(t)
-            curr_infection_time = curr_time + self._get_ht()
+            curr_infection_time = curr_time +  self._get_ht()
             # breaking condition
             if gen_idx > len(population.keys())-1:
                 self.logger.log_lp_msg(msg="Illness extinguished.")
@@ -116,9 +130,8 @@ class HawkesProcess():
                 #node = JSONDecoder(object_hook=Helper.node_from_json).decode(node)
                 if node.is_alive:
                     num_infected_children = node.infect(poisson_param=self.m)
+                    infection_counter += num_infected_children
                     if num_infected_children < 1:
-                        node.is_alive = False
-                        death_counter += 1
                         break
                     infected_children = [Node(infection_time=curr_infection_time, generation=gen_idx+1, is_alive=True) for i in range(num_infected_children)]
                     # here we update the total list of nodes in the current hawkes process
@@ -136,7 +149,7 @@ class HawkesProcess():
                 break
             # generation index is updated
             gen_idx += 1
-        return population, extinction_per_overtime, extinction_of_illness, death_counter
+        return population, extinction_per_overtime, extinction_of_illness, death_counter, infection_counter
 
     def simulate_process(self) -> None:
         """
@@ -148,6 +161,7 @@ class HawkesProcess():
         extinction_for_overtime_counter = 0 # counting how many times the hawkes process exits for overtime
         illness_extinction_counter = 0 # countering how many times the illneans goes extinct
         global_death_counter = 0 # counting how many death the overall process records
+        global_infection_counter = 0 # counting how many infection have been transmitted in the overall process
 
         while process_clock.current_time < self.ancestors_horizon:
             # generating an ancestor "arrival time" through PPP
@@ -168,13 +182,16 @@ class HawkesProcess():
             process_clock.current_time = ancestor.infection_time # setting clock's starting time to current ancestors "arrival time"
             # initialise an hawkes process for each ancestor
             self.logger.log_lp_msg(msg=f"Starting Hawkes process for ancestor {ancestor_counter}")
-            population['infections'][f'ancestor{ancestor_counter}'],\
+            local_population,\
                 extinction_for_over_time,\
                     extinction_of_illnes,\
-                        death_counter = self._generate_hawkes_process(ancestor=ancestor)
+                        death_counter,\
+                            infection_counter = self._generate_hawkes_process(ancestor=ancestor)
+            population['infections'][f'ancestor{ancestor_counter}'] = local_population
             # updating counters
             ancestor_counter += 1
             global_death_counter += death_counter
+            global_infection_counter += infection_counter
             if extinction_for_over_time:
                 extinction_for_overtime_counter += 1
             if extinction_of_illnes:
@@ -182,6 +199,7 @@ class HawkesProcess():
         self.logger.log_hp_msg(msg=f"Times the process terminated for overtime: {extinction_for_overtime_counter}")
         self.logger.log_hp_msg(msg=f"Times the process terminated for illness extinction: {illness_extinction_counter}")
         self.logger.log_hp_msg(msg=f"Deaths: {global_death_counter}")
+        self.logger.log_hp_msg(msg=f"Total number of infections: {global_infection_counter}")
         # logging final results into json format is specified to do so
         if self.log_to_file_bool:
             self.logger.log_general_msg(msg=f"Logging Hawkes process information in {os.path.join(Constants.LOG_FOLDER_PATH, f'{self.seed}_{Constants.HAWKES_PROCESS_LOGFILENAME}')}")
@@ -189,4 +207,43 @@ class HawkesProcess():
                 filepath=Constants.LOG_FOLDER_PATH,
                 filename=f"{self.seed}_{Constants.HAWKES_PROCESS_LOGFILENAME}",
                 data=population
-            )
+            )               
+
+    def simulate_process_v2(self):
+        """
+        Simulates an Hawkes process with a new of ancestors defined by self.ancestors_rate through a PPP.
+        """
+        process_clock : Clock = self._initialise_hprocess() #Global clock for the process
+        ancestors : List[AncestorNode] = list() # global list of ancestors
+        
+        while process_clock.current_time < self.ancestors_horizon:
+            # generating an ancestor "arrival time" through PPP
+            new_ancestor_time : float = self._generate_ancestor_time()
+            # increasing time unit for process's clock to keep track of passing time
+            process_clock.increase_time_unit(time_step=new_ancestor_time) 
+            # updating ancestors' list
+            ancestors.append(AncestorNode(infection_time=process_clock.current_time))
+        
+        self.logger.log_hp_msg(msg=f"Generated {len(ancestors)} ancestors.")
+        ancestor_counter = 0
+        infection_counter = 0
+        population : Dict[str, list()] = dict()
+        for ancestor in ancestors[0:1]: 
+            nodes : List[Node] = [ancestor]
+            current_time = ancestor.infection_time
+            while True:
+                taus : List[float] = list()
+                for node in nodes:
+                    new_tau = self._get_ht()
+                    new_infections_time = node.infection_time + new_tau
+                    new_infections = node.infect(poisson_param=self.m)
+                    infection_counter += new_infections
+                    infections = [Node(infection_time=new_infections_time) for _ in range(new_infections)]
+                    nodes.extend(infections)
+                    taus.append(new_tau)
+                    break
+                current_time += min(taus)
+                if current_time >= self.time_horizon:
+                    break
+
+                

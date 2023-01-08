@@ -9,9 +9,9 @@ if __name__ == "__main__":
     args = get_parser()
 
     myLogger = Logger(verbosity=args.verbosity)
-    Helper.format_output(width=os.get_terminal_size()[0])
     for seed in Constants.SEEDS:
         myLogger.log_general_msg(msg=f"Working with seed: {seed}")
+        Helper.format_output(width=os.get_terminal_size()[0])
         for h_t in Constants.h_t:
             myLogger.log_general_msg(msg=f"Working with {h_t} h(t)")
             hp = HawkesProcess(
@@ -29,6 +29,5 @@ if __name__ == "__main__":
                 logger = myLogger
             )
 
-            hp.simulate_process()
+            hp.simulate_process_v2()
             Helper.format_output(width=os.get_terminal_size()[0])
-    Helper.format_output(width=os.get_terminal_size()[0])

@@ -2,6 +2,8 @@ import numpy as np
 from json import JSONEncoder
 from typing import *
 
+from .tree import LocalTree
+
 class NodeEncoder(JSONEncoder):
     """
     Custom Json encoder to serialize Node class
@@ -9,7 +11,7 @@ class NodeEncoder(JSONEncoder):
     def default(self, o: Any) -> Any:
         return o.__dict__
 
-class Node(JSONEncoder):
+class Node():
     """
     Wrapper class encapsulating all the informations a node is supposed to carry:
     Args:
@@ -20,12 +22,14 @@ class Node(JSONEncoder):
     def __init__(
         self,
         infection_time : float,
-        generation : int,
-        is_alive : bool
+        # generation : int,
+        is_alive : bool = True,
+        tree : LocalTree = None
     ):
         self.infection_time = infection_time
-        self.generation = generation
+        # self.generation = generation
         self.is_alive = is_alive
+        self.tree = tree
 
     def infect(self, poisson_param : float):
         """
@@ -58,7 +62,7 @@ class AncestorNode(Node, JSONEncoder):
     ):
         super().__init__(
             infection_time=infection_time,
-            generation=0,
+            # generation=0,
             is_alive=is_alive
             )
 
