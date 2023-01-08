@@ -1,6 +1,4 @@
 from utils.clock import Clock
-from utils.node import Node
-from utils.ancestor_node import AncestorNode
 from utils.utils import Constants, Logger
 
 import numpy as np
@@ -8,9 +6,9 @@ from tqdm import tqdm
 
 from typing import *
 
-import os
 from time import time
 from collections import OrderedDict
+import math
 
 class HawkesProcess():
     """
@@ -71,37 +69,13 @@ class HawkesProcess():
             return np.random.uniform(low=self.a, high=self.b)
         elif self.h_t == "exp":
             return np.random.exponential(scale=1/self.l)
-
-    def _generate_children(self, parent_node : Node) -> List[Node]:
-        new_infection_time = parent_node.infection_time + self._get_ht()
-        new_infections = parent_node.infect(poisson_param=self.m)
-        infections = [Node(infection_time=new_infection_time) for _ in range(new_infections)]
-        return infections
         
-    def _simulate_hawkes_process(self, ancestor : Node):
-        node_idx = 1
-        if ancestor.infection_time <= self.time_horizon:
-            current_time = ancestor.infection_time
-            new_infection_time = current_time + self._get_ht()
-            if new_infection_time < self.time_horizon:
-                new_infections = ancestor.infect(poisson_param=self.m)
-                self.infection_counter += new_infections
-                ancestor.children = [Node(idx=node_idx+i, infection_time=new_infection_time, parent_node=ancestor) for i in range(new_infections)]
-                node_idx += new_infections
-                for child in ancestor.children:
-                    u = np.random.uniform(low=0, high=1)
-                    if u < self.extinction_rate:
-                        child.is_alive = False
-                        self.death_counter += 1
-                    if child.is_alive:
-                        self._simulate_hawkes_process(ancestor=child)
-
     def simulate(self) -> None:
         """
         Simulates an Hawkes process with a new of ancestors defined by self.ancestors_rate through a PPP.
         """
         process_clock : Clock = self._initialise_hprocess() #Global clock for the process
-        ancestors : List[AncestorNode] = list() # global list of ancestors
+        ancestors : List[float] = list() # global list of ancestors
         ancestor_counter : int = 0 # counter that keeps track of the number of generated ancestors
 
         while process_clock.current_time < self.ancestors_horizon:
@@ -113,14 +87,38 @@ class HawkesProcess():
             if process_clock.current_time > self.ancestors_horizon:
                 break
             # updating ancestors' list
-            ancestors.append(AncestorNode(infection_time=process_clock.current_time))
+            ancestors.append(process_clock.current_time)
             ancestor_counter += 1
 
         self.logger.log_hp_msg(msg=f"Generated {len(ancestors)} ancestors.")
         sim_start_time = time()
+        evolution : Dict[float, int] = dict() # k=tempo di infezione, v=numero di infetti a quel tempo
+        evolution_per_day : Dict[int, Tuple[int, int]] = dict() #k=indice del giorno, v=(n_infetti, n_morti)
+        intensity : Dict[int, float] = dict() #v=valore, k=giorno
         for ancestor_idx in tqdm(range(len(ancestors))):
+            process_clock._reset_clock()
             ancestor = ancestors[ancestor_idx]
-            self._simulate_hawkes_process(ancestor=ancestor)
+            process_clock.current_time = ancestor
+            while process_clock.current_time < self.time_horizon:
+                taus = list()
+                # genero un certo numero di nuove infezioni
+                new_infections = np.random.poisson(lam=self.m)
+                # genero dei tempi diversi per ogni infetto
+                for _ in range(new_infections):
+                    new_tau = process_clock.current_time + self._get_ht()
+                    taus.append(new_tau)
+                    # controllo che questo viva o muoia
+                    u = np.random.uniform(low=0, high=1)
+                    if u < self.extinction_rate:
+                        pass # qui lo devo ammazzare
+                    if not evolution.get(new_tau):
+                        evolution[new_tau] = 1
+                    else:
+                        evolution[new_tau] += 1
+                # appendo tutto in un dizionario globale: evolution
+                process_clock.current_time += min(taus)
+            # calcolo le statistiche finali con una funzione apposita
+        print(evolution)
         print("Total number of infections: ", self.infection_counter)
         print("Total number of deaths: ", self.death_counter)
         print(f"Percentage of deaths: {self.death_counter/self.infection_counter*100:.2f}%")
