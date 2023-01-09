@@ -2,15 +2,9 @@ import json
 import traceback
 import os
 
-from .node import Node
 from typing import *
 
-class NodeEncoder(json.JSONEncoder):
-    """
-    Custom Json encoder to serialize Node class
-    """
-    def default(self, o: Any) -> Any:
-        return o.__dict__
+from scipy.stats import t
 
 class Logger():
     """
@@ -43,7 +37,7 @@ class Constants:
     LOG_FOLDER_PATH = "log"
     PLOT_FOLDER_PATH = "plots"
 
-    SEEDS = [299266]#, 299266, 777, 123456, 124056]
+    SEEDS = [299266, 247548, 777, 123456, 124056]
     h_t = ['uniform', 'exp']
 
     HAWKES_PROCESS_LOGFILENAME = "population.json"
@@ -91,19 +85,18 @@ class Helper:
         except Exception as e:
             print(traceback.format_exc())
         finally:
-            return completed 
+            return completed
 
     @staticmethod
-    def node_from_json(json_obj) -> Node:
-        """
-        Routine used to decode json data into custom Node class.
-        Used in JSONDecoder for debugging purposes, should be called by JSONDecoder.object_hook
-        Args:
-            json_obj : Any => json serailized data
-        Returns:
-            Node's class instance
-        """
-        return Node(
-            infection_time=json_obj.get("infection_time"),
-            is_alive=json_obj.get("is_alive")
-        )
+    def compute_populations_statistics(populations : List[Dict[int, int]]) -> None:
+        mean_per_day : Dict[int, float] = dict()
+        per_day_mean : float = 0
+        upper_bound_per_day : Dict[int, float] = dict()
+        per_day_upper_bound : float = 0
+        lower_bound_per_day : Dict[int, float] = dict()
+        per_day_lower_bound : float = 0
+        for key in len(list(populations[0].keys())):
+            for population in populations:
+                mean_per_day += population[key]/len(Constants.SEEDS)
+                t.interval(confidence=.05, df=5, loc=mean_per_day, scale=)
+

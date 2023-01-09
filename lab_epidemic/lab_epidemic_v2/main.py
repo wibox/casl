@@ -9,6 +9,7 @@ if __name__ == "__main__":
     args = get_parser()
 
     myLogger = Logger(verbosity=args.verbosity)
+    populations = list()
     for seed in Constants.SEEDS:
         myLogger.log_general_msg(msg=f"Working with seed: {seed}")
         for h_t in Constants.h_t:
@@ -29,5 +30,8 @@ if __name__ == "__main__":
                 logger = myLogger
             )
 
-            hp.simulate()
+            population = hp.simulate()
+            populations.append(population)
             Helper.format_output(width=os.get_terminal_size()[0])
+            
+    Helper.compute_populations_statistics(populations=populations)
