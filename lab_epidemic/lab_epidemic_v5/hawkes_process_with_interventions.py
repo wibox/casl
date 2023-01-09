@@ -1,4 +1,4 @@
-from .hawkes_process import HawkesProcess
+from hawkes_process import HawkesProcess
 from utils.utils import Logger
 from utils.node import Node
 from utils.ancestor_node import AncestorNode
@@ -7,6 +7,10 @@ from utils.clock import Clock
 from typing import *
 
 import numpy as np
+
+from time import time
+from tqdm import tqdm
+import math
 
 class HawkesProcessWithInterventions(HawkesProcess):
     def __init__(
@@ -42,69 +46,41 @@ class HawkesProcessWithInterventions(HawkesProcess):
             log_to_file_bool=log_to_file_bool
         )
         self.time_for_interventions = time_for_interventions
-    # COSTO = (k *) rho**2
-    # VOGLIO TROVARE UN TRADEOFF TRA INTENSITA' STOCASTICA E COSTO(RHO)
-    # ho la mia intensità
-    # fino a T=20 questa intensità deve rimare la stessa
-    # quando arrivo a T=20
-        # genero il mio costo
-        # scalo l'intensità per il costo
-        # aumento il tempo
-        # cosa succede al costo quando aumento il tempo in funzione del parametro rho?
-        # ---> COSA SUCCEDE A RHO???
-        # SICCOME VOGLIO LIMITARE IL NUMERO DI MORTI MEDI SU TUTTO IL PERIODO DI SIMULAZIONE
-        # (UN ANNO) ALLORA:
+        self.infection_counter = 0
+        self.death_counter = 0
+        self.population : Dict[int, int] = dict().fromkeys([i for i in range(self.time_horizon)], 0)
+        self.dead_population : Dict[int, int] = dict().fromkeys([i for i in range(self.time_horizon)], 0)
 
-        # COSTO PROPORIZIONALE A RHO**2
-        # RHO VIENE CAMBIATO SULLA BASE DI m(T)/m(T-1)
-        # CHE E' SINTOMO DIRETTO DI QUANTO IL COSTO SIA EFFETTIVO, INFATTI
-        # SE IL COSTO AUMENTA TANTO --> IL NUMERO DI MORTI M(T) DIMINUISCE MOLTO E
-        # CONSEGUENTMENTE RHO DIMINUISCE
-        # SE INVECE IL COSTO DIMINUISCE, ALLORA IL NUMERO DI MORTI AUMENTA E RHO AUMENTA
-        # RHO INIZIALE = 1 E AD OGNI GIORNO LO AUMENTO PER QUEL RAPPORTO
-        # E DEFINISCO IL COSTO SEMPLICEMENTE COME RHO**2
-        # COME LO INTERLACCIO CON L'INTENSITA?
-        # DI SEGUITO L'INTENSITA' VIENE SCALATA DI UN FATTORE RHO 
-        # SE RHO < 1 L'INTENSITA' DIMINUISCE E CONSEGUENTEMENTE DIMINUISCE IL NUMERO DI MORTI
-        # E IL COSTO PUO' DIMINUIRE
-        # E VICEVERSA
-
-        """
-        QUELLO CHE BISOGNA FARE E' RIUSCIRE A LEGARE OGNI PROCESSO DI HAWKES ALLA SUA INTENSITA'
-
-        STIAMO LAVORANDO CON TEMPI DISCRETI E QUINDI L'INTENSITA' è UNA SEMPLICE SOMMATORIA CHE AUMENTA
-        MAN MANO INIZIALIZZANDOLA A SIGMA*RHO
-        LA SOMMATORIA DI TUTTE LE INTENSITA' DAL TEMPO OROGINARIO AL TEMPO CORRENTE E' IL NUMERO DI INFETTI
-        AL TEMPO CORRENTE QUINDI IN QUESTO MODO POSSO EVITARE DI LAVORARE CON UN BRANCHING PROCESS
-        E LAVORARE SEMPLICEMENTE CON L'INTENSITA' E I RELATIVI TEMPI
-        """
-
-    def _simulate_hawkes_process(self, ancestor : Node):
-        nodes = [ancestor]
-        current_time = ancestor.infection_time
-        infections_counter = 0
-        deaths_counter = 0
-        evolution : Dict[int, List[Tuple[int, int]]] = dict()
-        rho = 1
-        intensity = self.ancestors_rate*rho
-        total_cost = rho**2
-        while current_time < self.time_horizon:
-            if current_time < self.time_for_interventions:
-                for node in nodes:
-                    new_tau = super()._get_ht()
+    def _simulate_hawkes_process(self, ancestor: Node):
+        node_idx = 1
+        if ancestor.infection_time <= self.time_horizon:
+            current_time = ancestor.infection_time
+            new_infection_time = current_time + self._get_ht()
+            if new_infection_time < self.time_horizon:
+                new_infections = ancestor.infect(poisson_param=self.m)
+                self.infection_counter += new_infections
+                ancestor.children = [Node(idx=node_idx+i, infection_time=new_infection_time) for i in range(new_infections)]
+                node_idx += new_infections
+                if self.population.get(math.floor(new_infection_time)) is not None:
+                    self.population[math.floor(new_infection_time)] += new_infections
+                else:
+                    self.population[math.floor(new_infection_time)] = self.infection_counter
+                for child in ancestor.children:
                     u = np.random.uniform(low=0, high=1)
                     if u < self.extinction_rate:
-                        deaths_counter += 1
-                    else:
-                        pass # qui devo infetta
-            else:
-                pass
+                        child.is_alive = False
+                        self.death_counter += 1
+                        if self.dead_population.get(math.floor(new_infection_time)) is not None:
+                            self.dead_population[math.floor(new_infection_time)] += 1
+                        else:
+                            self.dead_population[math.floor(new_infection_time)] = self.death_counter
+                    if child.is_alive:
+                        self._simulate_hawkes_process(ancestor=child)
 
     def simulate(self):
-        rho = 1 # this is what parametrizes the total cost and dumps the stochastic intensity
-        intensity = self.ancestor_rate*rho # initial intensity given by the rate upon which ancestors arrive
-        total_cost = rho**2
-
+        """
+        Simulates an Hawkes process with a new of ancestors defined by self.ancestors_rate through a PPP.
+        """
         process_clock : Clock = self._initialise_hprocess() #Global clock for the process
         ancestors : List[AncestorNode] = list() # global list of ancestors
         ancestor_counter : int = 0 # counter that keeps track of the number of generated ancestors
@@ -120,3 +96,23 @@ class HawkesProcessWithInterventions(HawkesProcess):
             # updating ancestors' list
             ancestors.append(AncestorNode(infection_time=process_clock.current_time))
             ancestor_counter += 1
+
+        self.logger.log_hp_msg(msg=f"Generated {len(ancestors)} ancestors.")
+        sim_start_time = time()
+        for ancestor_idx in tqdm(range(len(ancestors[:1]))):
+            ancestor = ancestors[ancestor_idx]
+            self._simulate_hawkes_process(ancestor=ancestor)
+        print("Total number of infections: ", self.infection_counter)
+        print("Total number of deaths: ", self.death_counter)
+        print(f"Percentage of deaths: {self.death_counter/self.infection_counter*100:.2f}%")
+        print("Time to simulate: ", time() - sim_start_time)
+        print(self.population)
+        print(self.dead_population)
+        # print(np.cumsum(list(self.population.values())))
+        print(self.dead_population)
+        cumulative_infections = np.cumsum(list(self.population.values()))
+        _formatted_population : Dict[int, int] = dict()
+        for t in range(self.time_horizon):
+            _formatted_population[t] = cumulative_infections[t]
+        print(_formatted_population)
+        return _formatted_population

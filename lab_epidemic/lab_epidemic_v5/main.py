@@ -1,4 +1,5 @@
 from hawkes_process import HawkesProcess
+from hawkes_process_with_interventions import HawkesProcessWithInterventions
 from utils.utils import Helper, Constants, Logger
 from utils.custom_parser import get_parser
 
@@ -19,7 +20,27 @@ if __name__ == "__main__":
         for seed in Constants.SEEDS:
             myLogger.log_general_msg(msg=f"Working with seed: {seed}")
             Helper.format_output(width=os.get_terminal_size()[0])
-            hp = HawkesProcess(
+            # hp = HawkesProcess(
+            #     h_t = h_t,
+            #     a = 0,
+            #     b = 20,
+            #     l = .1,
+            #     m = 2,
+            #     ancestors_rate=20,
+            #     extinction_rate=.02,
+            #     ancestors_horizon=10,
+            #     time_horizon=100,
+            #     starting_time=0,
+            #     seed = seed,
+            #     logger = myLogger
+            # )
+
+            # population = hp.simulate()
+            # populations.append(population)
+            Helper.format_output(width=os.get_terminal_size()[0])
+
+            hpi = HawkesProcessWithInterventions(
+                time_for_interventions=20,
                 h_t = h_t,
                 a = 0,
                 b = 20,
@@ -34,8 +55,7 @@ if __name__ == "__main__":
                 logger = myLogger
             )
 
-            population = hp.simulate()
-            populations.append(population)
+            hpi.simulate()
             Helper.format_output(width=os.get_terminal_size()[0])
             
         formatted_population = Helper.compute_populations_statistics(populations=populations)
