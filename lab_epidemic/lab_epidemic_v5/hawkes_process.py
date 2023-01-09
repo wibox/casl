@@ -64,7 +64,7 @@ class HawkesProcess():
         Initialises process's clock
         """
         return Clock()
-        
+
     def _get_ht(self) -> float:
         """
         Returns instance of uniformely distributed or exponentially distributed RV for infection time generation
@@ -82,9 +82,13 @@ class HawkesProcess():
             if new_infection_time < self.time_horizon:
                 new_infections = ancestor.infect(poisson_param=self.m)
                 self.infection_counter += new_infections
-                ancestor.children = [Node(idx=node_idx+i, infection_time=new_infection_time, parent_node=ancestor) for i in range(new_infections)]
+                ancestor.children = [Node(idx=node_idx+i, infection_time=new_infection_time) for i in range(new_infections)]
                 node_idx += new_infections
-                self.population[math.floor(new_infection_time)] = self.infection_counter
+                # self.population[math.floor(new_infection_time)] = self.infection_counter
+                if self.population.get(math.floor(new_infection_time)) is not None:
+                    self.population[math.floor(new_infection_time)] += new_infections
+                else:
+                    self.population[math.floor(new_infection_time)] = self.infection_counter
                 for child in ancestor.children:
                     u = np.random.uniform(low=0, high=1)
                     if u < self.extinction_rate:
@@ -92,9 +96,6 @@ class HawkesProcess():
                         self.death_counter += 1
                     if child.is_alive:
                         self._simulate_hawkes_process(ancestor=child)
-
-    def _simulate_hawkes_process_v2(self, ancestor: Node):
-        pass
 
     def simulate(self) -> None:
         """
@@ -120,9 +121,72 @@ class HawkesProcess():
         sim_start_time = time()
         for ancestor_idx in tqdm(range(len(ancestors))):
             ancestor = ancestors[ancestor_idx]
-            self._simulate_hawkes_process_v2(ancestor=ancestor)
+            self._simulate_hawkes_process(ancestor=ancestor)
         print("Total number of infections: ", self.infection_counter)
         print("Total number of deaths: ", self.death_counter)
         print(f"Percentage of deaths: {self.death_counter/self.infection_counter*100:.2f}%")
         print("Time to simulate: ", time() - sim_start_time)
-        return self.population
+        print(self.population)
+        print(np.cumsum(list(self.population.values())))
+        cumulative_infections = np.cumsum(list(self.population.values()))
+        _formatted_population : Dict[int, int] = dict()
+        for t in range(self.time_horizon):
+            _formatted_population[t] = cumulative_infections[t]
+        print(_formatted_population)
+        return _formatted_population
+
+    # def _simulate_hawkes_process_v2(self, ancestor: Node):
+    #     new_infection_time = ancestor.infection_time + self._get_ht()
+    #     for children_id in range(ancestor.number_of_children):
+    #         u = np.random.uniform(low=0, high=1)
+    #         if u > self.extinction_rate:
+    #             new_infections = self.infect(poisson_param=self.m)
+    #             if self.population.get(math.floor(new_infection_time)) is not None:
+    #                 self.population[math.floor(new_infection_time)] += new_infections
+    #             else:
+    #                 self.population[math.floor(new_infection_time)] = new_infections
+    #             new_infected = Node(idx=children_id, is_alive=True, infection_time=new_infection_time, number_of_children=new_infections)
+    #             self.infection_counter += new_infections
+    #             if new_infection_time > self.time_horizon:
+    #                 return ancestor
+    #             else:
+    #                 ancestor.children.append(self._simulate_hawkes_process_v2(ancestor=new_infected))
+    #         else:
+    #             self.death_counter += 1
+    #     return ancestor
+
+    # def simulate_v2(self) -> None:
+    #     """
+    #     Simulates an Hawkes process with a new of ancestors defined by self.ancestors_rate through a PPP.
+    #     """
+    #     process_clock : Clock = self._initialise_hprocess() #Global clock for the process
+    #     ancestors : List[AncestorNode] = list() # global list of ancestors
+    #     ancestor_counter : int = 0 # counter that keeps track of the number of generated ancestors
+
+    #     while process_clock.current_time < self.ancestors_horizon:
+    #         # generating an ancestor "arrival time" through PPP
+    #         new_ancestor_time : float = self._generate_ancestor_time()
+    #         # increasing time unit for process's clock to keep track of passing time
+    #         process_clock.tick(amount=new_ancestor_time)
+    #         # exit if new ancestor's "arrival time" is greater than specified time horizon
+    #         if process_clock.current_time > self.ancestors_horizon:
+    #             break
+    #         # updating ancestors' list
+    #         ancestors.append(AncestorNode(
+    #             infection_time=process_clock.current_time,
+    #             idx=ancestor_counter,
+    #             is_alive=True,
+    #             number_of_children=self.infect(poisson_param=self.m)
+    #             ))
+    #         ancestor_counter += 1
+
+    #     self.logger.log_hp_msg(msg=f"Generated {len(ancestors)} ancestors.")
+    #     sim_start_time = time()
+    #     for ancestor_idx in tqdm(range(len(ancestors))):
+    #         ancestor = ancestors[ancestor_idx]
+    #         self._simulate_hawkes_process_v2(ancestor=ancestor)
+    #     print("Total number of infections: ", self.infection_counter)
+    #     print("Total number of deaths: ", self.death_counter)
+    #     print(f"Percentage of deaths: {self.death_counter/self.infection_counter*100:.2f}%")
+    #     print("Time to simulate: ", time() - sim_start_time)
+    #     return self.population

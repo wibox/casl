@@ -120,7 +120,7 @@ class HawkesProcess():
         sim_start_time = time()
         for ancestor_idx in tqdm(range(len(ancestors))):
             ancestor = ancestors[ancestor_idx]
-            self._simulate_hawkes_process_v2(ancestor=ancestor)
+            self._simulate_hawkes_process(ancestor=ancestor)
         print("Total number of infections: ", self.infection_counter)
         print("Total number of deaths: ", self.death_counter)
         print(f"Percentage of deaths: {self.death_counter/self.infection_counter*100:.2f}%")

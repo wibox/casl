@@ -58,7 +58,13 @@ class Helper:
             None
         """
         fig, ax = plt.subplots(figsize=(6, 5))
-        ax.fill_between(mean, lb, up)
+        mean = sorted(mean)
+        mean = np.array(mean)
+        lb = np.array(sorted(lb))
+        up = np.array(sorted(up))
+        ax.plot([t for t in range(100)], mean)
+        ax.fill_between([t for t in range(100)], mean, mean-lb, mean+up, alpha=.5)
+        #ax.set_xticks([i for i in range(100)])
         plt.savefig(f"{h}_result.png")
 
     @staticmethod
@@ -99,7 +105,6 @@ class Helper:
             for population in populations:
                 day_infections_list.append(population[key])
             mean_per_day.append(day_infections_list)
-        #print(mean_per_day)
         
         formatted_population : Dict[int, Tuple[float, float, float]] = dict()
         for key in range(100):
